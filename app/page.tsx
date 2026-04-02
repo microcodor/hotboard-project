@@ -1,6 +1,7 @@
 ﻿'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { useInternalApi } from '@/hooks/useInternalApi'
 import Link from 'next/link'
 import NodeCard from '@/components/cards/NodeCard'
 import { Header } from '@/components/layout/Header'
@@ -59,14 +60,15 @@ export default function HomePage() {
   const [categoryError, setCategoryError] = useState<string | null>(null)
 
   const PAGE_SIZE = 12
+  const { fetchInternal } = useInternalApi()
 
   useEffect(() => {
-    fetch('/api/categories')
+    fetchInternal('/categories')
       .then(r => r.json())
       .then(d => setCategories(d.data || []))
       .catch(e => setCategoryError(e.message))
       .finally(() => setIsLoadingCategories(false))
-  }, [])
+  }, [fetchInternal])
 
   const loadNodes = async (newOffset: number, reset = false) => {
     try {
@@ -77,7 +79,7 @@ export default function HomePage() {
       const params = new URLSearchParams({ limit: String(PAGE_SIZE), offset: String(newOffset) })
       if (selectedCategory) params.set('cid', selectedCategory)
 
-      const res = await fetch(`/api/nodes?${params}`)
+      const res = await fetchInternal(`/nodes?${params}`)
       if (!res.ok) throw new Error('加载失败')
       const data = await res.json()
 

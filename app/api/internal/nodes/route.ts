@@ -1,71 +1,26 @@
-﻿/**
- * 榜单节点 API
- * GET /api/nodes
- * 外部 API 接口，需要 API Key 鉴权
- * 内部网站访问请使用 /api/internal/nodes
+/**
+ * 内部接口：获取节点列表
+ * 仅限服务端调用，需要 INTERNAL_TOKEN 鉴权
+ * 用于首页 SSR，不走 API Key 扣费逻辑
  */
 import { NextRequest, NextResponse } from 'next/server'
 import pool from '@/lib/db-pg'
-import { verifyApiKey } from '@/lib/api-key'
-import { checkAndDeduct, deductCredits, ensureCredits, getClientIp } from '@/lib/quota'
+
+const INTERNAL_TOKEN = process.env.INTERNAL_TOKEN || 'hotboard-internal-2026'
 
 export async function GET(request: NextRequest) {
+  // 验证内部 Token
+  const authHeader = request.headers.get('Authorization')
+  const token = authHeader?.replace('Bearer ', '') || request.nextUrl.searchParams.get('token')
+
+  if (token !== INTERNAL_TOKEN) {
+    return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 })
+  }
+
   try {
-    // 强制要求 API Key
-    let userId: number | null = null
-    let apiKeyName = ''
-
-    try {
-      const keyUser = await verifyApiKey(request)
-      if (keyUser) {
-        userId = keyUser.userId
-        apiKeyName = keyUser.keyName
-      } else {
-        return NextResponse.json(
-          { success: false, error: 'API Key required. Get your key at /user/billing' },
-          { status: 401 }
-        )
-      }
-    } catch (e: any) {
-      return NextResponse.json({ success: false, error: e.message }, { status: 401 })
-    }
-
-    // 2. 限流检查
-    //    - 匿名（无 Key 无 Cookie）：IP 级别每日 100 次免费
-    // 扣余额
-    const ip = getClientIp(request)
-    const rl = await checkAndDeduct(userId, ip)
-    if (!rl.allowed) {
-      return NextResponse.json(
-        { success: false, error: `今日免费次数已用完（${rl.limit}次/天），请注册账号或充值`, rateLimit: rl },
-        {
-          status: 429,
-          headers: {
-            'X-RateLimit-Limit':     String(rl.limit),
-            'X-RateLimit-Remaining': String(rl.remaining),
-            'X-RateLimit-Reset':     rl.resetAt,
-            'Retry-After':           '86400',
-          },
-        }
-      )
-    }
-
-    let currentBalance = rl.balance
-    if (userId !== null) {
-      await ensureCredits(userId)
-      const ok = await deductCredits(userId, 1)
-      if (!ok) {
-        return NextResponse.json(
-          { success: false, error: '余额不足，请充值', rateLimit: { ...rl, balance: 0, remaining: 0, limit: 0 } },
-          { status: 402, headers: {} }
-        )
-      }
-      currentBalance = Math.max(0, (rl.balance ?? 0) - 1)
-    }
-
     const { searchParams } = new URL(request.url)
     const category = searchParams.get('cid')
-    const limit  = Math.min(parseInt(searchParams.get('limit')  || '12'), 50)
+    const limit = Math.min(parseInt(searchParams.get('limit') || '12'), 50)
     const offset = parseInt(searchParams.get('offset') || '0')
 
     // 总数
@@ -75,7 +30,7 @@ export async function GET(request: NextRequest) {
     const countResult = await pool.query(countQuery, countParams)
     const total = parseInt(countResult.rows[0].total)
 
-    // 节点列表（按 display_order 排序，支持首页自定义排序）
+    // 节点列表
     const params: any[] = []
     let nodesQuery = `
       SELECT n.id, n.hashid, n.name, n.url, n.logo,
@@ -124,11 +79,9 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true, data: nodes, total, offset, limit,
       hasMore: offset + nodes.length < total,
-      rateLimit: { limit: rl.limit, used: rl.used, remaining: currentBalance, balance: currentBalance, resetAt: rl.resetAt },
-      _auth: { userId, keyName: apiKeyName },
     })
   } catch (error: any) {
-    console.error('[API] /api/nodes error:', error)
+    console.error('[API] /api/internal/nodes error:', error)
     return NextResponse.json({ success: false, error: error.message, data: [] }, { status: 500 })
   }
 }
