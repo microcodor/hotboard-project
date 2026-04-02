@@ -68,6 +68,15 @@ export default function DocsPage() {
           </div>
         </div>
 
+        {/* Base URL */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">接口地址</h2>
+          <div className="bg-gray-900 rounded-xl p-5 font-mono text-sm">
+            <p className="text-yellow-300">https://hotboard.app</p>
+          </div>
+          <p className="text-sm text-gray-500 mt-2">如部署在本地： http://192.168.2.133:3000</p>
+        </section>
+
         {/* 认证方式 */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">认证方式</h2>

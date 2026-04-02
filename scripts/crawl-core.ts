@@ -328,6 +328,132 @@ export async function fetchHNBest() {
     }))
 }
 
+
+// ============================================================
+// 补充平台抓取函数
+// ============================================================
+
+export async function fetchBaidu() {
+  const res = await fetch('https://top.baidu.com/board?tab=realtime', {
+    headers: HEADERS,
+    signal: AbortSignal.timeout(15000),
+  })
+  const html = await res.text()
+  const items: any[] = []
+  const regex = /<div class="category-wrap_iQLoo horizontal_1eKyQ"><a[^>]*href="([^"]+)"[^>]*>.*?<div class="c-single-text-ellipsis">([^<]+)<\/div>/gs
+  let match
+  while ((match = regex.exec(html)) !== null) {
+    items.push({
+      title: match[2].trim(),
+      url: match[1],
+      hotValue: 0,
+    })
+  }
+  // 备用：使用API
+  if (items.length === 0) {
+    const apiRes = await fetch('https://api.vvhan.com/api/hotlist/baiduRD', {
+      headers: HEADERS,
+      signal: AbortSignal.timeout(15000),
+    })
+    const data = await apiRes.json()
+    if (data.success && data.data) {
+      for (const item of data.data.slice(0, 30)) {
+        items.push({
+          title: item.title,
+          url: item.url,
+          hotValue: item.hot || 0,
+        })
+      }
+    }
+  }
+  return items
+}
+
+export async function fetchBilibili() {
+  const res = await fetch('https://api.bilibili.com/x/web-interface/ranking/v2?rid=0&type=all', {
+    headers: { ...HEADERS, Referer: 'https://www.bilibili.com/' },
+    signal: AbortSignal.timeout(15000),
+  })
+  const data = await res.json()
+  const items: any[] = []
+  if (data.data && data.data.list) {
+    for (const item of data.data.list.slice(0, 50)) {
+      items.push({
+        title: item.title,
+        url: `https://www.bilibili.com/video/${item.bvid}`,
+        hotValue: item.stat.view,
+        thumbnail: item.pic,
+      })
+    }
+  }
+  return items
+}
+
+export async function fetchDouban() {
+  const res = await fetch('https://movie.douban.com/j/search_subjects?type=movie&tag=%E7%83%AD%E9%97%A8&page_limit=50&page_start=0', {
+    headers: { ...HEADERS, Referer: 'https://movie.douban.com/' },
+    signal: AbortSignal.timeout(15000),
+  })
+  const data = await res.json()
+  const items: any[] = []
+  if (data.subjects) {
+    for (const item of data.subjects.slice(0, 30)) {
+      items.push({
+        title: item.title,
+        url: item.url,
+        hotValue: item.rate ? parseFloat(item.rate) * 10000 : 0,
+        thumbnail: item.cover,
+      })
+    }
+  }
+  return items
+}
+
+export async function fetchThepaper() {
+  const res = await fetch('https://cache.thepaper.cn/contentapi/wwwIndex/rightSidebar', {
+    headers: HEADERS,
+    signal: AbortSignal.timeout(15000),
+  })
+  const data = await res.json()
+  const items: any[] = []
+  if (data.data && data.data.hotNews) {
+    for (const item of data.data.hotNews.slice(0, 30)) {
+      items.push({
+        title: item.name,
+        url: `https://www.thepaper.cn/newsDetail_forward_${item.contId}`,
+        hotValue: 0,
+      })
+    }
+  }
+  return items
+}
+
+export async function fetchHN() {
+  const res = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json', {
+    signal: AbortSignal.timeout(15000),
+  })
+  const ids = await res.json()
+  const items: any[] = []
+  const topIds = ids.slice(0, 30)
+  for (const id of topIds) {
+    try {
+      const storyRes = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`, {
+        signal: AbortSignal.timeout(10000),
+      })
+      const story = await storyRes.json()
+      if (story) {
+        items.push({
+          title: story.title,
+          url: story.url || `https://news.ycombinator.com/item?id=${id}`,
+          hotValue: story.score || 0,
+        })
+      }
+    } catch {}
+  }
+  return items
+}
+
+
 // ============================================================
 // 平台配置
 // ============================================================
@@ -347,6 +473,12 @@ export const PLATFORMS = [
   { id: 'devto-hot',       name: 'Dev.to',    fetch: fetchDevTo },
   { id: 'lobsters-hot',    name: 'Lobsters',  fetch: fetchLobsters },
   { id: 'hn-best',         name: 'HN Best',  fetch: fetchHNBest },
+  { id: 'baidu-hot',      name: '百度热搜',   fetch: fetchBaidu },
+  { id: 'bilibili-hot',   name: 'B站热门',    fetch: fetchBilibili },
+  { id: 'douban-movie',   name: '豆瓣电影',   fetch: fetchDouban },
+  { id: 'thepaper-hot',   name: '澎湃新闻',   fetch: fetchThepaper },
+  { id: 'hn-hot',         name: 'Hacker News', fetch: fetchHN },
+
 ]
 
 // ============================================================

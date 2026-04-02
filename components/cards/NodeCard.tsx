@@ -30,7 +30,7 @@ const PLATFORM_CONFIG: Record<string, {
   'juejin-hot':   { color: 'text-blue-500',  bgColor: 'bg-blue-50',   borderColor: 'border-blue-100',  logoUrl: 'https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/favicon-32x32.png', fallbackIcon: '💎' },
   'toutiao-hot':  { color: 'text-red-500',   bgColor: 'bg-red-50',    borderColor: 'border-red-100',   logoUrl: 'https://www.toutiao.com/favicon.ico', fallbackIcon: '📡' },
   'sspai-hot':    { color: 'text-red-500',   bgColor: 'bg-red-50',    borderColor: 'border-red-100',   logoUrl: 'https://sspai.com/favicon.ico', fallbackIcon: '✨' },
-  'tencent-hot':  { color: 'text-blue-600',  bgColor: 'bg-blue-50',   borderColor: 'border-blue-100',  logoUrl: 'https://mat1.gtimg.com/www/icon/favicon2.ico', fallbackIcon: '📰' },
+  'tencent-hot':  { color: 'text-blue-600',  bgColor: 'bg-blue-50',   borderColor: 'border-blue-100',  logoUrl: 'https://news.qq.com/favicon.ico', fallbackIcon: '📰' },
   'people-hot':   { color: 'text-red-700',   bgColor: 'bg-red-50',    borderColor: 'border-red-100',   logoUrl: 'http://www.people.com.cn/favicon.ico', fallbackIcon: '🗞️' },
   'xinhua-hot':   { color: 'text-red-600',   bgColor: 'bg-red-50',    borderColor: 'border-red-100',   logoUrl: 'https://www.xinhuanet.com/favicon.ico', fallbackIcon: '📡' },
   'v2ex-hot':       { color: 'text-gray-700',  bgColor: 'bg-gray-50',   borderColor: 'border-gray-200',  logoUrl: 'https://www.v2ex.com/favicon.ico',  fallbackIcon: '🌐' },
@@ -107,14 +107,18 @@ export default function NodeCard({ node, className }: NodeCardProps) {
                   {index + 1}
                 </span>
 
-                {/* 标题 — 点击跳转到平台详情页 */}
-                <Link
-                  href={`/n/${node.hashid}?highlight=${encodeURIComponent(item.title)}`}
-                  className="flex-1 min-w-0 text-xs text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors leading-tight line-clamp-2"
+                {/* 标题 — 点击跳转到平台详情页（阻止冒泡） */}
+                <span
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    window.location.href = `/n/${node.hashid}?highlight=${encodeURIComponent(item.title)}`
+                  }}
+                  className="flex-1 min-w-0 text-xs text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors leading-tight line-clamp-2 cursor-pointer"
                   title={item.title}
                 >
                   {item.title}
-                </Link>
+                </span>
 
                 {/* 热度 */}
                 {(item.hotValue ?? 0) > 0 && (
