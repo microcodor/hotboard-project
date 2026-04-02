@@ -1,0 +1,2245 @@
+
+> hotboard@1.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 2.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 3s (584 modules)
+ GET / 200 in 3323ms
+ ○ Compiling /n/[hashid] ...
+ ✓ Compiled /n/[hashid] in 883ms (706 modules)
+ ✓ Compiled /api/favorites/[hashid] in 161ms (379 modules)
+ ✓ Compiled (459 modules)
+ GET /api/nodes/baidu-hot 200 in 1209ms
+ GET /api/favorites/baidu-hot 200 in 1199ms
+ GET /api/favorites/baidu-hot 200 in 14ms
+ ✓ Compiled /api/nodes in 108ms (461 modules)
+ ✓ Compiled (466 modules)
+ GET /api/auth/me 200 in 277ms
+ GET /api/categories 200 in 279ms
+ GET /api/auth/me 200 in 24ms
+ GET /api/categories 200 in 28ms
+ GET /api/nodes?limit=12&offset=0 200 in 311ms
+ GET /api/nodes?limit=12&offset=0 200 in 16ms
+ ✓ Compiled /search in 265ms (824 modules)
+ ✓ Compiled /api/admin/platforms in 99ms (475 modules)
+ GET /api/admin/platforms 200 in 138ms
+ GET /api/admin/platforms 200 in 8ms
+ ✓ Compiled /api/search in 114ms (477 modules)
+ GET /api/search?q=%E5%BC%A0%E9%9B%AA&page=1&limit=20 200 in 290ms
+ GET /api/auth/me 200 in 21ms
+ GET /api/categories 200 in 27ms
+ GET /api/auth/me 200 in 18ms
+ GET /api/categories 200 in 24ms
+ GET /api/nodes?limit=12&offset=0 200 in 64ms
+ GET /api/nodes?limit=12&offset=0 200 in 16ms
+ GET / 200 in 295ms
+ GET /api/auth/me 200 in 16ms
+ GET /api/categories 200 in 19ms
+ GET /api/nodes?limit=12&offset=0 200 in 27ms
+ GET /api/auth/me 200 in 21ms
+ GET /api/categories 200 in 20ms
+ GET /api/nodes?limit=12&offset=0 200 in 24ms
+ GET / 200 in 275ms
+ ✓ Compiled in 362ms (645 modules)
+ ✓ Compiled in 113ms (366 modules)
+ GET / 200 in 271ms
+ ✓ Compiled /api/nodes in 135ms (391 modules)
+ ✓ Compiled (397 modules)
+ GET /api/auth/me 200 in 798ms
+ GET /api/categories 200 in 799ms
+ GET /api/auth/me 200 in 21ms
+ GET /api/categories 200 in 26ms
+ GET /api/nodes?limit=12&offset=0 200 in 830ms
+ GET /api/nodes?limit=12&offset=0 200 in 16ms
+ ✓ Compiled /api/crawl/import in 197ms (312 modules)
+ POST /api/crawl/import 200 in 277ms
+ POST /api/crawl/import 200 in 35ms
+ POST /api/crawl/import 200 in 62ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 39ms
+ POST /api/crawl/import 200 in 19ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 29ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 42ms
+ POST /api/crawl/import 200 in 38ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 28ms
+ GET / 200 in 319ms
+ ✓ Compiled in 285ms (645 modules)
+ GET / 200 in 293ms
+ ✓ Compiled /api/nodes in 46ms (315 modules)
+ GET /api/nodes?limit=1 200 in 730ms
+ GET / 200 in 309ms
+ ✓ Compiled in 233ms (681 modules)
+ GET / 200 in 278ms
+ GET / 200 in 285ms
+ GET / 200 in 293ms
+ GET / 200 in 276ms
+ GET / 200 in 310ms
+ ✓ Compiled /api/nodes in 227ms (391 modules)
+ ✓ Compiled (397 modules)
+ GET /api/auth/me 200 in 597ms
+ GET /api/categories 200 in 598ms
+ GET /api/auth/me 200 in 19ms
+ GET /api/categories 200 in 23ms
+ GET /api/nodes?limit=12&offset=0 200 in 626ms
+ GET /api/nodes?limit=12&offset=0 200 in 15ms
+ ✓ Compiled /n/[hashid] in 172ms (462 modules)
+ ✓ Compiled /api/favorites/[hashid] in 74ms (464 modules)
+ ✓ Compiled (466 modules)
+ GET /api/favorites/devto-hot 200 in 203ms
+ GET /api/nodes/devto-hot 200 in 216ms
+ GET /api/favorites/devto-hot 200 in 14ms
+ GET /api/auth/me 200 in 20ms
+ GET /api/categories 200 in 38ms
+ GET /api/auth/me 200 in 19ms
+ GET /api/nodes?limit=12&offset=0 200 in 45ms
+ GET /api/categories 200 in 14ms
+ GET /api/nodes?limit=12&offset=0 200 in 18ms
+ GET /api/nodes/github-trending 200 in 15ms
+ GET /api/favorites/github-trending 200 in 16ms
+ GET /api/favorites/github-trending 200 in 7ms
+ GET /api/auth/me 200 in 15ms
+ GET /api/categories 200 in 16ms
+ GET /api/nodes?limit=12&offset=0 200 in 24ms
+ GET /api/auth/me 200 in 18ms
+ GET /api/categories 200 in 20ms
+ GET /api/nodes?limit=12&offset=0 200 in 21ms
+ GET /api/nodes/douban-movie 200 in 30ms
+ GET /api/favorites/douban-movie 200 in 30ms
+ GET /api/favorites/douban-movie 200 in 11ms
+ GET /api/auth/me 200 in 16ms
+ GET /api/categories 200 in 20ms
+ GET /api/nodes?limit=12&offset=0 200 in 30ms
+ GET /api/auth/me 200 in 22ms
+ GET /api/categories 200 in 21ms
+ GET /api/nodes?limit=12&offset=0 200 in 23ms
+ ✓ Compiled /user/billing in 488ms (856 modules)
+ GET /api/auth/me 200 in 36ms
+ GET /api/auth/me 200 in 15ms
+ ✓ Compiled /api/user/subscription in 108ms (481 modules)
+ GET /api/user/subscription 200 in 147ms
+ GET /api/user/subscription 200 in 13ms
+ ✓ Compiled in 330ms (734 modules)
+ ✓ Compiled in 121ms (377 modules)
+ ✓ Compiled in 119ms (377 modules)
+ ✓ Compiled /api/auth/me in 354ms (730 modules)
+ ✓ Compiled in 0ms (467 modules)
+ GET /api/auth/me 200 in 913ms
+ GET /api/auth/me 200 in 13ms
+ ✓ Compiled /api/user/subscription in 224ms (469 modules)
+ GET /api/user/subscription 200 in 291ms
+ GET /api/user/subscription 200 in 7ms
+ ✓ Compiled /api/admin/auth/login in 125ms (473 modules)
+ POST /api/admin/auth/login 200 in 237ms
+ GET /api/auth/me 401 in 9ms
+ ✓ Compiled /api/auth/login in 128ms (475 modules)
+ POST /api/auth/login 401 in 167ms
+ GET /api/user/subscription 401 in 7ms
+ GET /user/billing 200 in 264ms
+ ✓ Compiled /api/nodes in 151ms (479 modules)
+ GET /api/nodes?limit=1 200 in 195ms
+ GET /api/nodes?limit=1 200 in 12ms
+ POST /api/auth/login 401 in 14ms
+ GET /api/user/subscription 401 in 8ms
+ GET /api/nodes?limit=1 200 in 13ms
+ ✓ Compiled in 339ms (849 modules)
+ ✓ Compiled /api/admin/auth/login in 68ms (469 modules)
+ POST /api/admin/auth/login 200 in 201ms
+ POST /api/admin/auth/login 200 in 66ms
+ POST /api/admin/auth/login 200 in 67ms
+ ✓ Compiled /api/user/subscription in 114ms (471 modules)
+ GET /api/user/subscription 401 in 143ms
+ ✓ Compiled /api/nodes in 74ms (475 modules)
+ GET /api/nodes?limit=1 200 in 116ms
+ GET /api/nodes?limit=1 200 in 10ms
+ GET /user/billing 200 in 306ms
+ ✓ Compiled /api/admin/cards in 142ms (478 modules)
+[Admin] POST /api/admin/cards error: Error: 未登录
+    at verifyAdminToken (webpack-internal:///(rsc)/./lib/admin-auth.ts:14:23)
+    at POST (webpack-internal:///(rsc)/./app/api/admin/cards/route.ts:87:88)
+    at C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57234
+    at C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\trace\tracer.js:140:36
+    at NoopContextManager.with (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:7062)
+    at ContextAPI.with (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:518)
+    at NoopTracer.startActiveSpan (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:18093)
+    at ProxyTracer.startActiveSpan (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:18854)
+    at C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\trace\tracer.js:122:103
+    at NoopContextManager.with (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:7062)
+    at ContextAPI.with (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\@opentelemetry\api\index.js:1:518)
+    at NextTracerImpl.trace (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\trace\tracer.js:122:28)
+    at C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:48896
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Object.wrap (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:40958)
+    at C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:47472
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Object.wrap (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:38293)
+    at C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:47434
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at eT.execute (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46881)
+    at eT.handle (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:58771)
+    at doRender (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1366:60)
+    at cacheEntry.responseCache.get.routeKind (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1588:34)
+    at ResponseCache.get (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\response-cache\index.js:49:26)
+    at DevServer.renderToResponseWithComponentsImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1496:53)
+ POST /api/admin/cards 500 in 170ms
+ POST /api/admin/auth/login 200 in 84ms
+ POST /api/admin/cards 200 in 11ms
+ ✓ Compiled /api/auth/register in 200ms (475 modules)
+ POST /api/auth/register 200 in 310ms
+ ✓ Compiled /api/user/subscription in 80ms (477 modules)
+ GET /api/user/subscription 200 in 117ms
+ ✓ Compiled /api/nodes in 79ms (480 modules)
+ GET /api/nodes?limit=1 200 in 120ms
+ ✓ Compiled /api/auth/login in 83ms (476 modules)
+ POST /api/auth/login 200 in 199ms
+ GET /api/user/subscription 200 in 8ms
+ ✓ Compiled /api/admin/auth/login in 85ms (479 modules)
+ POST /api/admin/auth/login 200 in 182ms
+ ✓ Compiled /api/admin/cards in 117ms (482 modules)
+ POST /api/admin/cards 200 in 153ms
+ ✓ Compiled /api/user/redeem in 115ms (484 modules)
+ POST /api/user/redeem 200 in 156ms
+ GET /api/user/subscription 200 in 8ms
+ ✓ Compiled in 259ms (853 modules)
+ ✓ Compiled in 127ms (375 modules)
+ ✓ Compiled in 121ms (375 modules)
+ POST /api/auth/login 200 in 85ms
+ GET /api/user/subscription 200 in 9ms
+ ✓ Compiled /api/nodes in 124ms (474 modules)
+ GET /api/nodes?limit=1 200 in 168ms
+ GET /api/nodes?limit=1 200 in 9ms
+ GET /api/user/subscription 200 in 9ms
+ POST /api/auth/login 200 in 78ms
+ GET /api/user/subscription 200 in 10ms
+ GET /api/nodes?limit=1 200 in 14ms
+ GET /api/nodes?limit=1 200 in 11ms
+ GET /api/nodes?limit=1 200 in 10ms
+ GET /api/user/subscription 200 in 8ms
+ ✓ Compiled in 298ms (730 modules)
+ ✓ Compiled /api/nodes in 101ms (469 modules)
+ GET /api/nodes?limit=1 200 in 813ms
+ ✓ Compiled /api/auth/login in 108ms (472 modules)
+ POST /api/auth/login 200 in 204ms
+ ✓ Compiled /api/user/subscription in 71ms (474 modules)
+ GET /api/user/subscription 200 in 118ms
+ GET /api/nodes?limit=1 200 in 22ms
+ GET /api/nodes?limit=1 200 in 14ms
+ GET /api/user/subscription 200 in 6ms
+ GET /api/nodes?limit=1 200 in 11ms
+ GET /user/billing 200 in 280ms
+ ○ Compiling /admin/cards ...
+ ✓ Compiled /admin/cards in 639ms (875 modules)
+ GET /admin/cards 200 in 970ms
+ GET / 200 in 292ms
+ ✓ Compiled /hot in 353ms (913 modules)
+ GET /hot 200 in 986ms
+ ✓ Compiled /search in 113ms (521 modules)
+ GET /search 200 in 447ms
+ GET /user/billing 200 in 279ms
+ GET /admin/cards 200 in 291ms
+ ✓ Compiled /api/crawl/import in 137ms (388 modules)
+ POST /api/crawl/import 200 in 872ms
+ POST /api/crawl/import 200 in 39ms
+ POST /api/crawl/import 200 in 58ms
+ POST /api/crawl/import 200 in 18ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 45ms
+ POST /api/crawl/import 200 in 43ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 28ms
+ ✓ Compiled in 432ms (766 modules)
+ ⨯ ./app/admin/cards/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\admin\cards\page.tsx[0m:10:1]
+ [2m10[0m | }
+ [2m11[0m | 
+ [2m12[0m | const TYPE_LABELS: Record<string, string> = {
+ [2m13[0m |   plan_monthly: '鍖呮湀濂楅', plan_yearly: '鍖呭勾濂楅', credits: '鐐规暟鍏呭€?,
+    : [31;1m                                                                                  ^^^^^^^^^^^^^^^^^^^^^[0m
+ [2m14[0m | }
+ [2m15[0m | const STATUS_COLORS: Record<string, string> = {
+ [2m16[0m |   unused: 'bg-green-100 text-green-700',
+    `----
+
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\admin\cards\page.tsx[0m:75:1]
+ [2m75[0m |   const totalPages = Math.ceil(total / 20)
+ [2m76[0m | 
+ [2m77[0m |   return (
+ [2m78[0m |     <div className="p-6 space-y-6">
+    : [31;1m     ^^^[0m
+ [2m79[0m |       <div className="flex items-center justify-between">
+ [2m80[0m |         <div>
+ [2m81[0m |           <h1 className="text-2xl font-bold text-gray-900">鍗″瘑绠＄悊</h1>
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/cards/page.tsx
+ ○ Compiling /_error ...
+ ⨯ ./app/admin/cards/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\admin\cards\page.tsx[0m:10:1]
+ [2m10[0m | }
+ [2m11[0m | 
+ [2m12[0m | const TYPE_LABELS: Record<string, string> = {
+ [2m13[0m |   plan_monthly: '鍖呮湀濂楅', plan_yearly: '鍖呭勾濂楅', credits: '鐐规暟鍏呭€?,
+    : [31;1m                                                                                  ^^^^^^^^^^^^^^^^^^^^^[0m
+ [2m14[0m | }
+ [2m15[0m | const STATUS_COLORS: Record<string, string> = {
+ [2m16[0m |   unused: 'bg-green-100 text-green-700',
+    `----
+
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\admin\cards\page.tsx[0m:75:1]
+ [2m75[0m |   const totalPages = Math.ceil(total / 20)
+ [2m76[0m | 
+ [2m77[0m |   return (
+ [2m78[0m |     <div className="p-6 space-y-6">
+    : [31;1m     ^^^[0m
+ [2m79[0m |       <div className="flex items-center justify-between">
+ [2m80[0m |         <div>
+ [2m81[0m |           <h1 className="text-2xl font-bold text-gray-900">鍗″瘑绠＄悊</h1>
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/cards/page.tsx
+ GET / 500 in 1896ms
+ GET /user/billing 500 in 17ms
+ ⨯ ./app/admin/cards/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\admin\cards\page.tsx[0m:10:1]
+ [2m10[0m | }
+ [2m11[0m | 
+ [2m12[0m | const TYPE_LABELS: Record<string, string> = {
+ [2m13[0m |   plan_monthly: '鍖呮湀濂楅', plan_yearly: '鍖呭勾濂楅', credits: '鐐规暟鍏呭€?,
+    : [31;1m                                                                                  ^^^^^^^^^^^^^^^^^^^^^[0m
+ [2m14[0m | }
+ [2m15[0m | const STATUS_COLORS: Record<string, string> = {
+ [2m16[0m |   unused: 'bg-green-100 text-green-700',
+    `----
+
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\admin\cards\page.tsx[0m:75:1]
+ [2m75[0m |   const totalPages = Math.ceil(total / 20)
+ [2m76[0m | 
+ [2m77[0m |   return (
+ [2m78[0m |     <div className="p-6 space-y-6">
+    : [31;1m     ^^^[0m
+ [2m79[0m |       <div className="flex items-center justify-between">
+ [2m80[0m |         <div>
+ [2m81[0m |           <h1 className="text-2xl font-bold text-gray-900">鍗″瘑绠＄悊</h1>
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/cards/page.tsx
+ GET /user/billing 500 in 488ms
+ ⨯ ./app/admin/cards/page.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\admin\cards\page.tsx[0m:10:1]
+ [2m10[0m | }
+ [2m11[0m | 
+ [2m12[0m | const TYPE_LABELS: Record<string, string> = {
+ [2m13[0m |   plan_monthly: '鍖呮湀濂楅', plan_yearly: '鍖呭勾濂楅', credits: '鐐规暟鍏呭€?,
+    : [31;1m                                                                                  ^^^^^^^^^^^^^^^^^^^^^[0m
+ [2m14[0m | }
+ [2m15[0m | const STATUS_COLORS: Record<string, string> = {
+ [2m16[0m |   unused: 'bg-green-100 text-green-700',
+    `----
+
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\admin\cards\page.tsx[0m:75:1]
+ [2m75[0m |   const totalPages = Math.ceil(total / 20)
+ [2m76[0m | 
+ [2m77[0m |   return (
+ [2m78[0m |     <div className="p-6 space-y-6">
+    : [31;1m     ^^^[0m
+ [2m79[0m |       <div className="flex items-center justify-between">
+ [2m80[0m |         <div>
+ [2m81[0m |           <h1 className="text-2xl font-bold text-gray-900">鍗″瘑绠＄悊</h1>
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/admin/cards/page.tsx
+ GET /admin/cards 500 in 1042ms
+ ✓ Compiled /_not-found in 612ms (985 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 404 in 928ms
+ GET /user/billing 200 in 327ms
+ GET /user/billing 200 in 289ms
+ ✓ Compiled /api/auth/me in 274ms (509 modules)
+ GET /api/auth/me 200 in 692ms
+ GET /api/auth/me 200 in 9ms
+ ✓ Compiled /api/user/subscription in 162ms (511 modules)
+ GET /api/user/subscription 200 in 213ms
+ GET /api/user/subscription 200 in 8ms
+ GET / 200 in 314ms
+ GET /user/billing 200 in 250ms
+ ✓ Compiled /admin/cards in 431ms (1126 modules)
+ GET /admin/cards 200 in 722ms
+ ✓ Compiled /api/admin/auth/login in 111ms (537 modules)
+ POST /api/admin/auth/login 200 in 217ms
+ ✓ Compiled /api/admin/cards in 113ms (540 modules)
+ POST /api/admin/cards 200 in 150ms
+ ✓ Compiled /api/auth/login in 159ms (542 modules)
+ POST /api/auth/login 200 in 266ms
+ GET /api/user/subscription 200 in 10ms
+ ✓ Compiled /api/user/redeem in 112ms (544 modules)
+ POST /api/user/redeem 200 in 155ms
+ GET /api/user/subscription 200 in 8ms
+ GET /user/billing 200 in 322ms
+ GET /api/auth/me 200 in 19ms
+ GET /api/auth/me 200 in 7ms
+ GET /api/user/subscription 200 in 9ms
+ GET /api/user/subscription 200 in 8ms
+ GET /api/auth/me 200 in 21ms
+ ✓ Compiled /api/categories in 232ms (514 modules)
+ ✓ Compiled (516 modules)
+ GET /api/auth/me 200 in 434ms
+ GET /api/categories 200 in 463ms
+ GET /api/nodes?limit=12&offset=0 402 in 466ms
+ GET /api/categories 200 in 16ms
+ GET /api/nodes?limit=12&offset=0 402 in 15ms
+ ○ Compiling /user ...
+ ✓ Compiled /user in 701ms (1167 modules)
+ GET /api/auth/me 200 in 57ms
+ ✓ Compiled /api/user/stats in 137ms (543 modules)
+ GET /api/auth/me 200 in 235ms
+ GET /api/user/stats 200 in 295ms
+ GET /api/auth/me 200 in 10ms
+ GET /api/user/stats 200 in 13ms
+ GET /api/auth/me 200 in 9ms
+ GET /api/auth/me 200 in 16ms
+ GET /api/categories 200 in 22ms
+ GET /api/nodes?limit=12&offset=0 402 in 28ms
+ GET /api/auth/me 200 in 14ms
+ GET /api/categories 200 in 19ms
+ GET /api/nodes?limit=12&offset=0 402 in 17ms
+ GET /api/nodes?limit=12&offset=0 402 in 11ms
+ GET /api/nodes?limit=12&offset=0 402 in 11ms
+ GET /api/nodes?limit=12&offset=0 402 in 11ms
+ GET / 200 in 305ms
+ GET /api/auth/me 200 in 14ms
+ GET /api/categories 200 in 17ms
+ GET /api/nodes?limit=12&offset=0 402 in 22ms
+ GET /api/auth/me 200 in 14ms
+ GET /api/categories 200 in 19ms
+ GET /api/nodes?limit=12&offset=0 402 in 17ms
+ GET /api/nodes?limit=12&offset=0 402 in 11ms
+ GET /api/nodes?limit=12&offset=0 402 in 10ms
+ GET / 200 in 273ms
+ GET /api/auth/me 200 in 12ms
+ GET /api/categories 200 in 16ms
+ GET /api/nodes?limit=12&offset=0 402 in 18ms
+ GET /api/auth/me 200 in 15ms
+ GET /api/categories 200 in 15ms
+ GET /api/nodes?limit=12&offset=0 402 in 17ms
+ DELETE /api/auth/me 200 in 9ms
+ GET / 200 in 305ms
+ GET /api/auth/me 401 in 13ms
+ GET /api/categories 200 in 18ms
+ GET /api/auth/me 401 in 25ms
+ GET /api/categories 200 in 24ms
+ GET /api/nodes?limit=12&offset=0 200 in 49ms
+ GET /api/nodes?limit=12&offset=0 200 in 17ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 548ms (1217 modules)
+ ✓ Compiled in 116ms (647 modules)
+ GET /api/auth/me 401 in 213ms
+ GET /api/auth/me 401 in 21ms
+ ✓ Compiled /api/auth/login in 185ms (573 modules)
+ POST /api/auth/login 200 in 306ms
+ GET / 200 in 301ms
+ GET /api/auth/me 200 in 15ms
+ GET /api/categories 200 in 21ms
+ GET /api/auth/me 200 in 16ms
+ GET /api/categories 200 in 18ms
+ GET /api/nodes?limit=12&offset=0 402 in 43ms
+ GET /api/nodes?limit=12&offset=0 402 in 15ms
+ ✓ Compiled in 563ms (1097 modules)
+ GET / 200 in 300ms
+ ✓ Compiled in 209ms (647 modules)
+ ✓ Compiled in 145ms (647 modules)
+ ✓ Compiled in 140ms (647 modules)
+ GET / 200 in 283ms
+ ✓ Compiled /api/auth/login in 174ms (563 modules)
+ POST /api/auth/login 200 in 472ms
+ ✓ Compiled /api/nodes in 184ms (567 modules)
+ GET /api/nodes?limit=1 200 in 243ms
+ ✓ Compiled in 666ms (1097 modules)
+ ✓ Compiled in 227ms (647 modules)
+ ⨯ ./app/search/page.tsx
+Error: 
+  [31mx[0m Unknown regular expression flags.
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\search\page.tsx[0m:27:1]
+ [2m27[0m |   const [platforms, setPlatforms] = useState<Platform[]>([])
+ [2m28[0m | 
+ [2m29[0m |   useEffect(() => {
+ [2m30[0m |     fetch(/api/admin/platforms, { credentials: 'include' })).then(r => r.json()).then(d => {
+    : [31;1m          ^^^^^^^^^^[0m
+ [2m31[0m |       if (d.success) setPlatforms(d.data.map((p: any) => ({ hashid: p.hashid, name: p.displayName || p.name })))
+ [2m32[0m |     }).catch(() => {})
+ [2m33[0m |   }, [])
+    `----
+
+  [31mx[0m Expected ';', '}' or <eof>
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\search\page.tsx[0m:27:1]
+ [2m27[0m |   const [platforms, setPlatforms] = useState<Platform[]>([])
+ [2m28[0m | 
+ [2m29[0m |   useEffect(() => {
+ [2m30[0m |     fetch(/api/admin/platforms, { credentials: 'include' })).then(r => r.json()).then(d => {
+    : [31;1m    ^^^^^^^^^^^^^^^^^^^^^^^^^^^|^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[33;1m^[0m
+    :                                [31;1m`-- [31;1mThis is the expression part of an expression statement[0m[0m
+ [2m31[0m |       if (d.success) setPlatforms(d.data.map((p: any) => ({ hashid: p.hashid, name: p.displayName || p.name })))
+ [2m32[0m |     }).catch(() => {})
+ [2m33[0m |   }, [])
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/search/page.tsx
+ GET / 500 in 12ms
+ ✓ Compiled in 256ms (647 modules)
+ ✓ Compiled in 272ms (647 modules)
+ GET / 200 in 285ms
+ ✓ Compiled in 204ms (647 modules)
+ GET / 200 in 264ms
+ ✓ Compiled /api/nodes in 270ms (562 modules)
+ ✓ Compiled (568 modules)
+ GET /api/auth/me 200 in 526ms
+ GET /api/categories 200 in 527ms
+ GET /api/auth/me 200 in 20ms
+ GET /api/categories 200 in 24ms
+ GET /api/nodes?limit=12&offset=0 200 in 555ms
+ GET /api/nodes?limit=12&offset=0 200 in 17ms
+ GET /api/nodes?limit=12&offset=12 200 in 15ms
+ ✓ Compiled /api/auth/login in 113ms (571 modules)
+ POST /api/auth/login 200 in 228ms
+ GET /api/nodes?limit=1 200 in 17ms
+ ✓ Compiled /api/user/subscription in 155ms (573 modules)
+ GET /api/user/subscription 200 in 191ms
+ GET /api/nodes?limit=1&api_key=hb_b717d657bc723413cf6a51a597619549 402 in 23ms
+ GET /api/user/subscription 200 in 7ms
+ ✓ Compiled /hot in 287ms (595 modules)
+ ✓ Compiled /api/hot in 138ms (597 modules)
+ GET /api/hot?range=day&limit=100 200 in 199ms
+ GET /api/hot?range=day&limit=100 200 in 6ms
+ GET /api/auth/me 200 in 32ms
+ GET /api/auth/me 200 in 9ms
+ GET /api/categories 200 in 46ms
+ GET /api/categories 200 in 15ms
+ GET /api/nodes?limit=12&offset=0 200 in 70ms
+ GET /api/nodes?limit=12&offset=0 200 in 17ms
+ GET /api/nodes?limit=1&api_key=hb_b717d657bc723413cf6a51a597619549 402 in 14ms
+ GET /api/nodes?limit=1&api_key=hb_b717d657bc723413cf6a51a597619549 200 in 14ms
+ GET /api/auth/me 200 in 79ms
+ ✓ Compiled /api/user/stats in 187ms (568 modules)
+ GET /api/user/stats 200 in 428ms
+ GET /api/auth/me 200 in 333ms
+ GET /api/user/stats 200 in 11ms
+ GET /api/auth/me 200 in 12ms
+ GET /api/auth/me 200 in 8ms
+ ✓ Compiled /api/categories in 104ms (570 modules)
+ GET /api/auth/me 200 in 265ms
+ GET /api/categories 200 in 274ms
+ GET /api/auth/me 200 in 25ms
+ GET /api/nodes?limit=12&offset=0 200 in 301ms
+ GET /api/categories 200 in 23ms
+ GET /api/nodes?limit=12&offset=0 200 in 37ms
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:44:1]
+ [2m44[0m |   if (!user) return null
+ [2m45[0m | 
+ [2m46[0m |   return (
+ [2m47[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m48[0m |       {/* 侧边栏 */}
+ [2m49[0m |       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-white border-r border-gray-200 flex flex-col flex-shrink-0 transition-all duration-200 fixed inset-y-0 left-0 z-20 pt-16 lg:static lg:pt-0`}>
+ [2m50[0m |         {/* 用户信息头部 */}
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET / 500 in 8ms
+ ○ Compiling /_not-found ...
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:44:1]
+ [2m44[0m |   if (!user) return null
+ [2m45[0m | 
+ [2m46[0m |   return (
+ [2m47[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m48[0m |       {/* 侧边栏 */}
+ [2m49[0m |       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-white border-r border-gray-200 flex flex-col flex-shrink-0 transition-all duration-200 fixed inset-y-0 left-0 z-20 pt-16 lg:static lg:pt-0`}>
+ [2m50[0m |         {/* 用户信息头部 */}
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 500 in 630ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 5ms
+ GET / 500 in 9ms
+ ✓ Compiled /_not-found in 266ms (649 modules)
+ GET / 500 in 12ms
+ ✓ Compiled in 154ms (647 modules)
+ GET / 500 in 11ms
+ ✓ Compiled in 163ms (647 modules)
+ GET / 500 in 9ms
+ ○ Compiling /_not-found ...
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:44:1]
+ [2m44[0m |   if (!user) return null
+ [2m45[0m | 
+ [2m46[0m |   return (
+ [2m47[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m48[0m |       {/* 侧边栏 */}
+ [2m49[0m |       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-white border-r border-gray-200 flex flex-col flex-shrink-0 transition-all duration-200 fixed inset-y-0 left-0 z-20 pt-16 lg:static lg:pt-0`}>
+ [2m50[0m |         {/* 用户信息头部 */}
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 500 in 550ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 5ms
+ GET / 500 in 7ms
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:44:1]
+ [2m44[0m |   if (!user) return null
+ [2m45[0m | 
+ [2m46[0m |   return (
+ [2m47[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m48[0m |       {/* 侧边栏 */}
+ [2m49[0m |       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-white border-r border-gray-200 flex flex-col flex-shrink-0 transition-all duration-200 fixed inset-y-0 left-0 z-20 pt-16 lg:static lg:pt-0`}>
+ [2m50[0m |         {/* 用户信息头部 */}
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 500 in 389ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 3ms
+ GET / 500 in 10ms
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:44:1]
+ [2m44[0m |   if (!user) return null
+ [2m45[0m | 
+ [2m46[0m |   return (
+ [2m47[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m48[0m |       {/* 侧边栏 */}
+ [2m49[0m |       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-white border-r border-gray-200 flex flex-col flex-shrink-0 transition-all duration-200 fixed inset-y-0 left-0 z-20 pt-16 lg:static lg:pt-0`}>
+ [2m50[0m |         {/* 用户信息头部 */}
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 500 in 463ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 4ms
+ GET / 500 in 9ms
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:44:1]
+ [2m44[0m |   if (!user) return null
+ [2m45[0m | 
+ [2m46[0m |   return (
+ [2m47[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m48[0m |       {/* 侧边栏 */}
+ [2m49[0m |       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-white border-r border-gray-200 flex flex-col flex-shrink-0 transition-all duration-200 fixed inset-y-0 left-0 z-20 pt-16 lg:static lg:pt-0`}>
+ [2m50[0m |         {/* 用户信息头部 */}
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 500 in 392ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 4ms
+ GET / 500 in 13ms
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:44:1]
+ [2m44[0m |   if (!user) return null
+ [2m45[0m | 
+ [2m46[0m |   return (
+ [2m47[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m48[0m |       {/* 侧边栏 */}
+ [2m49[0m |       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-white border-r border-gray-200 flex flex-col flex-shrink-0 transition-all duration-200 fixed inset-y-0 left-0 z-20 pt-16 lg:static lg:pt-0`}>
+ [2m50[0m |         {/* 用户信息头部 */}
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 500 in 338ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 500 in 7ms
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:44:1]
+ [2m44[0m |   if (!user) return null
+ [2m45[0m | 
+ [2m46[0m |   return (
+ [2m47[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m48[0m |       {/* 侧边栏 */}
+ [2m49[0m |       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-white border-r border-gray-200 flex flex-col flex-shrink-0 transition-all duration-200 fixed inset-y-0 left-0 z-20 pt-16 lg:static lg:pt-0`}>
+ [2m50[0m |         {/* 用户信息头部 */}
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 500 in 385ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 500 in 11ms
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:44:1]
+ [2m44[0m |   if (!user) return null
+ [2m45[0m | 
+ [2m46[0m |   return (
+ [2m47[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m48[0m |       {/* 侧边栏 */}
+ [2m49[0m |       <aside className={`${sidebarOpen ? 'w-56' : 'w-16'} bg-white border-r border-gray-200 flex flex-col flex-shrink-0 transition-all duration-200 fixed inset-y-0 left-0 z-20 pt-16 lg:static lg:pt-0`}>
+ [2m50[0m |         {/* 用户信息头部 */}
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 500 in 415ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 5ms
+ GET / 500 in 8ms
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:52:1]
+ [2m52[0m |   if (!user) return null
+ [2m53[0m | 
+ [2m54[0m |   return (
+ [2m55[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m56[0m |       {/* Sidebar */}
+ [2m57[0m |       <aside
+ [2m58[0m |         className={`${
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 500 in 500ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 3ms
+ GET / 500 in 7ms
+ ⨯ ./app/user/layout.tsx
+Error: 
+  [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4mC:\Users\Administrator\.qclaw\workspace\hotboard-project\app\user\layout.tsx[0m:52:1]
+ [2m52[0m |   if (!user) return null
+ [2m53[0m | 
+ [2m54[0m |   return (
+ [2m55[0m |     <div className="min-h-screen bg-gray-50 flex">
+    : [31;1m     ^^^[0m
+ [2m56[0m |       <aside className={(sidebarOpen ? 'w-56' : 'w-16') + ' bg-white border-r border-gray-200 flex flex-col flex-shrink-0 transition-all duration-200 fixed inset-y-0 left-0 z-20 pt-16 lg:static lg:pt-0'}>
+ [2m57[0m |         <div className="h-16 flex items-center gap-3 px-4 border-b border-gray-100 lg:hidden">
+ [2m58[0m |           <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 text-xs font-bold flex-shrink-0">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/user/layout.tsx
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 500 in 377ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 5ms
+ GET / 500 in 8ms
+ ✓ Compiled /_not-found in 743ms (1094 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 404 in 1111ms
+ GET / 200 in 365ms
+ ✓ Compiled /api/nodes in 265ms (568 modules)
+ ✓ Compiled (574 modules)
+ GET /api/auth/me 200 in 718ms
+ GET /api/categories 200 in 720ms
+ GET /api/auth/me 200 in 20ms
+ GET /api/categories 200 in 25ms
+ GET /api/nodes?limit=12&offset=0 200 in 750ms
+ GET /api/nodes?limit=12&offset=0 200 in 15ms
+ ✓ Compiled /api/auth/login in 214ms (577 modules)
+ POST /api/auth/login 200 in 367ms
+ GET /user 200 in 301ms
+ ✓ Compiled /user/favorites in 372ms (1225 modules)
+ GET /user/favorites 200 in 687ms
+ ✓ Compiled /user/history in 332ms (1236 modules)
+ GET /user/history 200 in 644ms
+ ○ Compiling /user/settings ...
+ ✓ Compiled /user/settings in 776ms (1325 modules)
+ GET /user/settings 200 in 1054ms
+ GET /user/billing 200 in 298ms
+ ✓ Compiled /api/crawl/import in 199ms (488 modules)
+ POST /api/crawl/import 200 in 299ms
+ POST /api/crawl/import 200 in 38ms
+ POST /api/crawl/import 200 in 81ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 39ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 43ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 79ms
+ POST /api/crawl/import 200 in 38ms
+ POST /api/crawl/import 200 in 59ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 38ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 44ms
+ POST /api/crawl/import 200 in 39ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 81ms
+ POST /api/crawl/import 200 in 37ms
+ POST /api/crawl/import 200 in 64ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 44ms
+ POST /api/crawl/import 200 in 39ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 29ms
+ POST /api/crawl/import 200 in 61ms
+ POST /api/crawl/import 200 in 64ms
+ POST /api/crawl/import 200 in 70ms
+ POST /api/crawl/import 200 in 18ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 46ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 19ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 29ms
+ POST /api/crawl/import 200 in 83ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 90ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 33ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 49ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 29ms
+ POST /api/crawl/import 200 in 64ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 80ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 48ms
+ POST /api/crawl/import 200 in 49ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 65ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 127ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 38ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 71ms
+ POST /api/crawl/import 200 in 42ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 68ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 98ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 46ms
+ POST /api/crawl/import 200 in 49ms
+ POST /api/crawl/import 200 in 39ms
+ POST /api/crawl/import 200 in 20ms
+ POST /api/crawl/import 200 in 20ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 70ms
+ POST /api/crawl/import 200 in 49ms
+ POST /api/crawl/import 200 in 42ms
+ POST /api/crawl/import 200 in 20ms
+ POST /api/crawl/import 200 in 38ms
+ POST /api/crawl/import 200 in 20ms
+ POST /api/crawl/import 200 in 118ms
+ POST /api/crawl/import 200 in 18ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 29ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 47ms
+ POST /api/crawl/import 200 in 70ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 114ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 15ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 49ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 94ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 100ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 42ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 51ms
+ POST /api/crawl/import 200 in 42ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 70ms
+ POST /api/crawl/import 200 in 66ms
+ POST /api/crawl/import 200 in 100ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 42ms
+ POST /api/crawl/import 200 in 15ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 29ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 50ms
+ POST /api/crawl/import 200 in 43ms
+ POST /api/crawl/import 200 in 20ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 94ms
+ POST /api/crawl/import 200 in 42ms
+ POST /api/crawl/import 200 in 111ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 49ms
+ POST /api/crawl/import 200 in 43ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 84ms
+ POST /api/crawl/import 200 in 43ms
+ POST /api/crawl/import 200 in 91ms
+ POST /api/crawl/import 200 in 18ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 50ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 111ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 101ms
+ POST /api/crawl/import 200 in 18ms
+ POST /api/crawl/import 200 in 42ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 47ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 31ms
+ POST /api/crawl/import 200 in 86ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 124ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 32ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 50ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 66ms
+ POST /api/crawl/import 200 in 44ms
+ POST /api/crawl/import 200 in 110ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 39ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 30ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 49ms
+ POST /api/crawl/import 200 in 49ms
+ POST /api/crawl/import 200 in 43ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 30ms
+ GET / 200 in 362ms
+ ✓ Compiled /api/nodes in 247ms (488 modules)
+ ✓ Compiled (573 modules)
+ GET /api/auth/me 200 in 700ms
+ GET /api/categories 200 in 702ms
+ GET /api/auth/me 200 in 19ms
+ GET /api/categories 200 in 22ms
+ GET /api/nodes?limit=12&offset=0 200 in 732ms
+ GET /api/nodes?limit=12&offset=0 200 in 16ms
+ GET / 200 in 324ms
+ GET /api/auth/me 200 in 15ms
+ GET /api/categories 200 in 14ms
+ GET /api/nodes?limit=12&offset=0 200 in 24ms
+ GET /api/auth/me 200 in 18ms
+ GET /api/categories 200 in 19ms
+ GET /api/nodes?limit=12&offset=0 200 in 23ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 654ms (1289 modules)
+ ✓ Compiled in 146ms (700 modules)
+ GET /admin 200 in 976ms
+ ✓ Compiled /api/admin/stats in 150ms (592 modules)
+ GET /api/admin/stats 401 in 197ms
+ GET /api/admin/stats 401 in 14ms
+ ✓ Compiled /admin/login in 353ms (1300 modules)
+ ✓ Compiled /api/crawl/import in 175ms (534 modules)
+ POST /api/crawl/import 200 in 263ms
+ POST /api/crawl/import 200 in 40ms
+ POST /api/crawl/import 200 in 133ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 48ms
+ POST /api/crawl/import 200 in 21ms
+ ✓ Compiled /api/admin/auth/login in 203ms (537 modules)
+ POST /api/admin/auth/login 200 in 476ms
+ POST /api/crawl/import 200 in 375ms
+ GET /api/admin/stats 200 in 25ms
+ GET /api/admin/stats 200 in 14ms
+ GET /api/admin/stats 200 in 12ms
+ POST /api/crawl/import 200 in 33ms
+ POST /api/crawl/import 200 in 26ms
+ ✓ Compiled /admin/crawl in 462ms (1250 modules)
+ POST /api/crawl/import 200 in 47ms
+ ✓ Compiled /api/admin/crawl in 142ms (546 modules)
+ GET /api/admin/crawl 200 in 209ms
+ GET /api/admin/crawl 200 in 14ms
+ POST /api/crawl/import 200 in 31ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 78ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 31ms
+ ✓ Compiled in 829ms (1073 modules)
+ ✓ Compiled in 359ms (1087 modules)
+ ⨯ ./app/api/admin/crawl-schedule/route.ts:8:1
+Module not found: Can't resolve 'openclaw'
+[0m [90m  6 |[39m [36mimport[39m { [33mNextRequest[39m[33m,[39m [33mNextResponse[39m } [36mfrom[39m [32m'next/server'[39m[0m
+[0m [90m  7 |[39m [36mimport[39m { verifyAdminToken } [36mfrom[39m [32m'@/lib/admin-auth'[39m[0m
+[0m[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m { cron } [36mfrom[39m [32m'openclaw'[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m  9 |[39m[0m
+[0m [90m 10 |[39m [36mconst[39m [33mCRAWL_JOB_ID[39m [33m=[39m [32m'4671d5f7-de56-4d8e-94a7-7e3e434deb3e'[39m[0m
+[0m [90m 11 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./app/api/admin/crawl-schedule/route.ts:8:1
+Module not found: Can't resolve 'openclaw'
+[0m [90m  6 |[39m [36mimport[39m { [33mNextRequest[39m[33m,[39m [33mNextResponse[39m } [36mfrom[39m [32m'next/server'[39m[0m
+[0m [90m  7 |[39m [36mimport[39m { verifyAdminToken } [36mfrom[39m [32m'@/lib/admin-auth'[39m[0m
+[0m[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m { cron } [36mfrom[39m [32m'openclaw'[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m  9 |[39m[0m
+[0m [90m 10 |[39m [36mconst[39m [33mCRAWL_JOB_ID[39m [33m=[39m [32m'4671d5f7-de56-4d8e-94a7-7e3e434deb3e'[39m[0m
+[0m [90m 11 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+ ○ Compiling /_not-found ...
+ ⨯ ./app/api/admin/crawl-schedule/route.ts:8:1
+Module not found: Can't resolve 'openclaw'
+[0m [90m  6 |[39m [36mimport[39m { [33mNextRequest[39m[33m,[39m [33mNextResponse[39m } [36mfrom[39m [32m'next/server'[39m[0m
+[0m [90m  7 |[39m [36mimport[39m { verifyAdminToken } [36mfrom[39m [32m'@/lib/admin-auth'[39m[0m
+[0m[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m { cron } [36mfrom[39m [32m'openclaw'[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m  9 |[39m[0m
+[0m [90m 10 |[39m [36mconst[39m [33mCRAWL_JOB_ID[39m [33m=[39m [32m'4671d5f7-de56-4d8e-94a7-7e3e434deb3e'[39m[0m
+[0m [90m 11 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+ GET /api/admin/crawl-schedule 500 in 708ms
+ GET /api/admin/crawl 500 in 708ms
+ GET /api/admin/crawl-schedule 500 in 13ms
+ GET /api/admin/crawl 500 in 15ms
+ ⨯ ./app/api/admin/crawl-schedule/route.ts:8:1
+Module not found: Can't resolve 'openclaw'
+[0m [90m  6 |[39m [36mimport[39m { [33mNextRequest[39m[33m,[39m [33mNextResponse[39m } [36mfrom[39m [32m'next/server'[39m[0m
+[0m [90m  7 |[39m [36mimport[39m { verifyAdminToken } [36mfrom[39m [32m'@/lib/admin-auth'[39m[0m
+[0m[31m[1m>[22m[39m[90m  8 |[39m [36mimport[39m { cron } [36mfrom[39m [32m'openclaw'[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m  9 |[39m[0m
+[0m [90m 10 |[39m [36mconst[39m [33mCRAWL_JOB_ID[39m [33m=[39m [32m'4671d5f7-de56-4d8e-94a7-7e3e434deb3e'[39m[0m
+[0m [90m 11 |[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+ GET /admin/crawl 500 in 11ms
+ GET / 500 in 13ms
+ ✓ Compiled /_not-found in 446ms (1077 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 331ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /_next/static/webpack/16febc171435ccc3.webpack.hot-update.json 404 in 784ms
+ GET /admin/crawl 200 in 326ms
+ GET / 200 in 249ms
+ ✓ Compiled /api/admin/stats in 184ms (495 modules)
+ GET /api/admin/stats 200 in 470ms
+ GET /api/admin/stats 200 in 18ms
+ ✓ Compiled /api/admin/crawl-schedule in 134ms (498 modules)
+ ✓ Compiled (500 modules)
+ ✓ Compiled /api/nodes in 214ms (502 modules)
+ ✓ Compiled (508 modules)
+ GET /api/admin/crawl-schedule 401 in 902ms
+ GET /api/admin/crawl 200 in 926ms
+ GET /api/admin/crawl-schedule 401 in 23ms
+ GET /api/auth/me 200 in 576ms
+ GET /api/categories 200 in 577ms
+ GET /api/admin/crawl 200 in 21ms
+ GET /api/auth/me 200 in 36ms
+ GET /api/nodes?limit=12&offset=0 200 in 619ms
+ GET /api/categories 200 in 47ms
+ GET /api/nodes?limit=12&offset=0 200 in 22ms
+ ✓ Compiled in 432ms (1217 modules)
+ ✓ Compiled /api/admin/auth/login in 180ms (495 modules)
+ POST /api/admin/auth/login 200 in 306ms
+ ✓ Compiled /api/admin/crawl-schedule in 98ms (497 modules)
+ GET /api/admin/crawl-schedule 200 in 133ms
+ GET /admin/crawl 200 in 301ms
+ ✓ Compiled in 400ms (1088 modules)
+ ✓ Compiled /api/admin/auth/login in 98ms (495 modules)
+ POST /api/admin/auth/login 200 in 392ms
+ ✓ Compiled /api/admin/crawl-schedule in 177ms (498 modules)
+ GET /api/admin/crawl-schedule 200 in 211ms
+ PATCH /api/admin/crawl-schedule 200 in 7ms
+ PATCH /api/admin/crawl-schedule 200 in 7ms
+ POST /api/admin/auth/login 200 in 87ms
+ GET /admin/crawl 200 in 290ms
+ ✓ Compiled /_not-found in 363ms (1191 modules)
+ GET /admin/dashboard 404 in 649ms
+ ○ Compiling /admin/users ...
+ ✓ Compiled /admin/users in 643ms (1215 modules)
+ GET /admin/users 200 in 956ms
+ ✓ Compiled /admin/platforms in 378ms (1226 modules)
+ GET /admin/platforms 200 in 697ms
+ ✓ Compiled /api/admin/crawl in 182ms (513 modules)
+ GET /api/admin/crawl 200 in 238ms
+ ✓ Compiled /api/admin/crawl-schedule in 197ms (516 modules)
+ GET /api/admin/crawl-schedule 200 in 237ms
+ ✓ Compiled /api/crawl/import in 187ms (414 modules)
+ POST /api/crawl/import 200 in 281ms
+ POST /api/crawl/import 200 in 47ms
+ POST /api/crawl/import 200 in 130ms
+ POST /api/crawl/import 200 in 20ms
+ POST /api/crawl/import 200 in 45ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 34ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 91ms
+ POST /api/crawl/import 200 in 53ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 29ms
+ POST /api/crawl/import 200 in 33ms
+ GET /admin/crawl 200 in 301ms
+ ✓ Compiled /api/admin/stats in 185ms (494 modules)
+ GET /api/admin/stats 200 in 243ms
+ GET /api/admin/stats 200 in 16ms
+ ✓ Compiled /api/admin/crawl in 99ms (497 modules)
+ ✓ Compiled (500 modules)
+ GET /api/admin/crawl-schedule 200 in 235ms
+ GET /api/admin/crawl-schedule 200 in 7ms
+ GET /api/admin/crawl 200 in 247ms
+ GET /api/admin/crawl 200 in 8ms
+ ✓ Compiled in 815ms (1095 modules)
+ ✓ Compiled in 553ms (1097 modules)
+ ✓ Compiled /api/admin/auth/login in 169ms (496 modules)
+ POST /api/admin/auth/login 200 in 476ms
+ GET /admin 200 in 309ms
+ GET /admin/crawl 200 in 308ms
+ ✓ Compiled /admin/knowledge-base in 481ms (1221 modules)
+ GET /admin/knowledge-base 200 in 780ms
+ ○ Compiling /docs ...
+ ✓ Compiled /docs in 540ms (1085 modules)
+ ✓ Compiled in 546ms (1078 modules)
+ ✓ Compiled in 155ms (719 modules)
+ ✓ Compiled in 357ms (1064 modules)
+ ✓ Compiled in 554ms (1064 modules)
+ ✓ Compiled in 576ms (1080 modules)
+ ✓ Compiled /api/admin/auth/login in 317ms (474 modules)
+ POST /api/admin/auth/login 200 in 753ms
+ GET /docs 200 in 285ms
+ ✓ Compiled /admin/api-docs in 450ms (1191 modules)
+ GET /admin/api-docs 200 in 755ms
+ ✓ Compiled /api/admin/api-docs in 127ms (484 modules)
+ GET /api/admin/api-docs 200 in 176ms
+ GET / 200 in 300ms
+ ✓ Compiled /api/nodes in 232ms (472 modules)
+ ✓ Compiled (478 modules)
+ GET /api/auth/me 200 in 524ms
+ GET /api/categories 200 in 525ms
+ GET /api/auth/me 200 in 24ms
+ GET /api/categories 200 in 28ms
+ GET /api/nodes?limit=12&offset=0 200 in 558ms
+ GET /api/nodes?limit=12&offset=0 200 in 17ms
+ GET / 200 in 310ms
+ GET /api/auth/me 200 in 15ms
+ GET /api/categories 200 in 15ms
+ GET /api/nodes?limit=12&offset=0 200 in 24ms
+ GET /api/auth/me 200 in 23ms
+ GET /api/categories 200 in 26ms
+ GET /api/nodes?limit=12&offset=0 200 in 26ms
+ GET /api/auth/me 200 in 16ms
+ GET /api/categories 200 in 17ms
+ GET /api/nodes?limit=12&offset=0 200 in 24ms
+ GET /api/auth/me 200 in 19ms
+ GET /api/categories 200 in 16ms
+ GET /api/nodes?limit=12&offset=0 200 in 25ms
+ ✓ Compiled /api/crawl/import in 171ms (393 modules)
+ POST /api/crawl/import 200 in 269ms
+ POST /api/crawl/import 200 in 61ms
+ POST /api/crawl/import 200 in 44ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 42ms
+ POST /api/crawl/import 200 in 163ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 43ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 32ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 32ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 24ms
+ ✓ Compiled in 664ms (1083 modules)
+ ✓ Compiled /api/nodes in 164ms (474 modules)
+ GET /api/nodes?limit=1 200 in 420ms
+ ✓ Compiled /api/crawl/import in 96ms (476 modules)
+ POST /api/crawl/import 200 in 202ms
+ POST /api/crawl/import 200 in 47ms
+ POST /api/crawl/import 200 in 157ms
+ POST /api/crawl/import 200 in 18ms
+ POST /api/crawl/import 200 in 43ms
+ POST /api/crawl/import 200 in 19ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 34ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 62ms
+ POST /api/crawl/import 200 in 46ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 32ms
+ GET /admin/knowledge-base 200 in 296ms
+ ✓ Compiled /api/admin/stats in 234ms (473 modules)
+ GET /api/admin/stats 200 in 288ms
+ GET /api/admin/stats 200 in 14ms
+ ✓ Compiled /api/admin/crawl-schedule in 144ms (476 modules)
+ ✓ Compiled (479 modules)
+ GET /api/admin/crawl-schedule 200 in 322ms
+ GET /api/admin/crawl-schedule 200 in 8ms
+ GET /api/admin/crawl 200 in 340ms
+ GET /api/admin/crawl 200 in 7ms
+ ✓ Compiled in 393ms (1083 modules)
+ ✓ Compiled in 165ms (723 modules)
+ ✓ Compiled /api/admin/crawl-schedule in 474ms (1083 modules)
+ ✓ Compiled in 0ms (477 modules)
+ GET /api/admin/crawl-schedule 200 in 538ms
+ GET /api/admin/crawl 200 in 547ms
+ ✓ Compiled in 297ms (1200 modules)
+ GET /api/admin/crawl-schedule 200 in 37ms
+ GET /api/admin/crawl 200 in 47ms
+ GET /api/admin/crawl-schedule 200 in 9ms
+ GET /api/admin/crawl 200 in 8ms
+ ✓ Compiled in 311ms (1200 modules)
+ ✓ Compiled in 0ms (477 modules)
+ ✓ Compiled in 0ms (477 modules)
+ ✓ Compiled in 0ms (477 modules)
+ GET /api/admin/crawl-schedule 200 in 406ms
+ GET /api/admin/crawl 200 in 428ms
+ ✓ Compiled in 360ms (1200 modules)
+ GET /api/admin/crawl-schedule 200 in 24ms
+ GET /api/admin/crawl 200 in 32ms
+ ✓ Compiled /api/crawl/import in 162ms (479 modules)
+ POST /api/crawl/import 200 in 267ms
+ POST /api/crawl/import 200 in 44ms
+ POST /api/crawl/import 200 in 169ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 52ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 33ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 57ms
+ POST /api/crawl/import 200 in 45ms
+ POST /api/crawl/import 200 in 20ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 30ms
+ ✓ Compiled /api/admin/auth/login in 179ms (476 modules)
+ POST /api/admin/auth/login 200 in 284ms
+ ✓ Compiled /api/admin/crawl-schedule in 127ms (479 modules)
+ GET /api/admin/crawl-schedule 200 in 184ms
+ ✓ Compiled /api/admin/crawl in 97ms (482 modules)
+ POST /api/admin/crawl 200 in 131ms
+ POST /api/crawl/import 200 in 90ms
+ POST /api/crawl/import 200 in 46ms
+ POST /api/crawl/import 200 in 174ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 43ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 32ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 62ms
+ POST /api/crawl/import 200 in 51ms
+ POST /api/admin/auth/login 200 in 80ms
+ GET /admin/crawl 200 in 311ms
+ GET /admin/crawl 200 in 289ms
+ ✓ Compiled /api/admin/stats in 168ms (473 modules)
+ GET /api/admin/stats 200 in 214ms
+ GET /api/admin/stats 200 in 17ms
+ ✓ Compiled /api/admin/crawl-schedule in 90ms (476 modules)
+ ✓ Compiled (479 modules)
+ GET /api/admin/crawl-schedule 200 in 224ms
+ GET /api/admin/crawl 200 in 234ms
+ GET /api/admin/crawl-schedule 200 in 13ms
+ GET /api/admin/crawl 200 in 13ms
+Worker API 不可用，降级到直接执行: TypeError: fetch failed
+    at node:internal/deps/undici/undici:15845:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async POST (webpack-internal:///(rsc)/./app/api/admin/crawl/route.ts:62:30)
+    at async C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57228
+    at async eT.execute (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46851)
+    at async eT.handle (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:58760)
+    at async doRender (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1496:28)
+    at async DevServer.renderPageComponent (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+ POST /api/admin/crawl 200 in 17ms
+ ✓ Compiled /api/crawl/import in 97ms (481 modules)
+ POST /api/crawl/import 200 in 195ms
+ GET /api/admin/crawl 200 in 10ms
+ POST /api/crawl/import 200 in 44ms
+ POST /api/crawl/import 200 in 151ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 43ms
+ POST /api/crawl/import 200 in 18ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 33ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 29ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 25ms
+ GET /admin/crawl 200 in 306ms
+ GET /api/admin/stats 200 in 28ms
+ GET /api/admin/stats 200 in 12ms
+ GET /api/admin/crawl 200 in 16ms
+ GET /api/admin/crawl-schedule 200 in 17ms
+ GET /api/admin/crawl 200 in 11ms
+ GET /api/admin/crawl-schedule 200 in 14ms
+ ✓ Compiled /api/admin/crawl-schedule in 485ms (1083 modules)
+ ✓ Compiled in 0ms (477 modules)
+ GET /api/admin/crawl-schedule 200 in 507ms
+ GET /api/admin/crawl 200 in 516ms
+ ✓ Compiled in 310ms (1200 modules)
+ ✓ Compiled in 0ms (477 modules)
+ ✓ Compiled in 0ms (477 modules)
+ ✓ Compiled in 1ms (477 modules)
+ GET /api/admin/crawl-schedule 200 in 465ms
+ GET /api/admin/crawl 200 in 490ms
+ GET /admin/crawl 200 in 289ms
+ ✓ Compiled /api/admin/stats in 160ms (479 modules)
+ GET /api/admin/stats 200 in 235ms
+ GET /api/admin/stats 200 in 16ms
+ GET /api/admin/crawl 200 in 16ms
+ GET /api/admin/crawl-schedule 200 in 17ms
+ GET /api/admin/crawl 200 in 12ms
+ GET /api/admin/crawl-schedule 200 in 13ms
+ GET /admin/crawl 200 in 267ms
+ GET /api/admin/stats 200 in 13ms
+ GET /api/admin/stats 200 in 11ms
+ GET /api/admin/crawl 200 in 11ms
+ GET /api/admin/crawl-schedule 200 in 14ms
+ GET /api/admin/crawl 200 in 11ms
+ GET /api/admin/crawl-schedule 200 in 12ms
+ GET /admin/crawl 200 in 295ms
+ GET /api/admin/stats 200 in 12ms
+ GET /api/admin/stats 200 in 12ms
+ GET /api/admin/crawl 200 in 13ms
+ GET /api/admin/crawl-schedule 200 in 14ms
+ GET /api/admin/crawl 200 in 10ms
+ GET /api/admin/crawl-schedule 200 in 14ms
+ ✓ Compiled in 255ms (723 modules)
+ ✓ Compiled in 235ms (723 modules)
+ ✓ Compiled /api/admin/crawl-schedule in 350ms (1083 modules)
+ ✓ Compiled in 0ms (477 modules)
+ GET /api/admin/crawl-schedule 200 in 469ms
+ GET /api/admin/crawl 200 in 477ms
+ GET /admin/crawl 200 in 292ms
+ ✓ Compiled /api/admin/stats in 161ms (473 modules)
+ GET /api/admin/stats 200 in 220ms
+ GET /api/admin/stats 200 in 17ms
+ ✓ Compiled /api/admin/crawl-schedule in 92ms (476 modules)
+ ✓ Compiled (479 modules)
+ GET /api/admin/crawl-schedule 200 in 217ms
+ GET /api/admin/crawl-schedule 200 in 9ms
+ GET /api/admin/crawl 200 in 229ms
+ GET /api/admin/crawl 200 in 7ms
+ GET /admin/crawl 200 in 302ms
+ GET /api/admin/stats 200 in 26ms
+ GET /api/admin/stats 200 in 17ms
+ GET /api/admin/crawl 200 in 13ms
+ GET /api/admin/crawl-schedule 200 in 18ms
+ GET /api/admin/crawl 200 in 18ms
+ GET /api/admin/crawl-schedule 200 in 19ms
+ ✓ Compiled /api/admin/crawl-schedule in 727ms (1200 modules)
+ GET /api/admin/crawl-schedule 200 in 609ms
+ GET /api/admin/crawl 200 in 621ms
+ GET /admin/crawl 200 in 310ms
+ ✓ Compiled /api/admin/stats in 129ms (473 modules)
+ GET /api/admin/stats 200 in 197ms
+ GET /api/admin/stats 200 in 14ms
+ ✓ Compiled /api/admin/crawl-schedule in 90ms (476 modules)
+ ✓ Compiled (479 modules)
+ GET /api/admin/crawl-schedule 200 in 215ms
+ GET /api/admin/crawl-schedule 200 in 8ms
+ GET /api/admin/crawl 200 in 227ms
+ GET /api/admin/crawl 200 in 8ms
+ ✓ Compiled /admin/cards in 291ms (489 modules)
+ ✓ Compiled /api/admin/cards in 124ms (492 modules)
+ GET /api/admin/cards?page=1&limit=20 200 in 177ms
+ GET /api/admin/cards?page=1&limit=20 200 in 10ms
+ GET /api/admin/crawl 200 in 14ms
+ GET /api/admin/crawl-schedule 200 in 15ms
+ GET /api/admin/crawl 200 in 10ms
+ GET /api/admin/crawl-schedule 200 in 13ms
+Worker API 不可用，降级到直接执行: TypeError: fetch failed
+    at node:internal/deps/undici/undici:15845:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async POST (webpack-internal:///(rsc)/./app/api/admin/crawl/route.ts:62:30)
+    at async C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57228
+    at async eT.execute (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46851)
+    at async eT.handle (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:58760)
+    at async doRender (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1588:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1496:28)
+    at async DevServer.renderPageComponent (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1924:24)
+    at async DevServer.renderToResponseImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:1962:32)
+    at async DevServer.pipeImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\Administrator\.qclaw\workspace\hotboard-project\node_modules\next\dist\server\lib\start-server.js:141:13) {
+  [cause]: AggregateError [ECONNREFUSED]: 
+      at internalConnectMultiple (node:net:1134:18)
+      at afterConnectMultiple (node:net:1715:7) {
+    code: 'ECONNREFUSED',
+    [errors]: [ [Error], [Error] ]
+  }
+}
+ POST /api/admin/crawl 200 in 19ms
+ ✓ Compiled /api/crawl/import in 161ms (494 modules)
+ POST /api/crawl/import 200 in 250ms
+ GET /api/admin/crawl 200 in 11ms
+ POST /api/crawl/import 200 in 41ms
+ POST /api/crawl/import 200 in 97ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 44ms
+ POST /api/crawl/import 200 in 15ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 29ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 24ms
+ GET /admin/crawl 200 in 267ms
+ GET /api/admin/stats 200 in 25ms
+ GET /api/admin/stats 200 in 13ms
+ GET /api/admin/crawl 200 in 14ms
+ GET /api/admin/crawl-schedule 200 in 15ms
+ GET /api/admin/crawl 200 in 10ms
+ GET /api/admin/crawl-schedule 200 in 13ms
+ ✓ Compiled in 376ms (1087 modules)
+ GET / 200 in 319ms
+ ✓ Compiled /api/nodes in 270ms (476 modules)
+ ✓ Compiled (482 modules)
+ GET /api/auth/me 200 in 558ms
+ GET /api/categories 200 in 560ms
+ GET /api/auth/me 200 in 24ms
+ GET /api/nodes?limit=12&offset=0 200 in 592ms
+ GET /api/categories 200 in 30ms
+ GET /api/nodes?limit=12&offset=0 200 in 18ms
+ ✓ Compiled /api/crawl/import in 161ms (397 modules)
+ POST /api/crawl/import 200 in 297ms
+ POST /api/crawl/import 200 in 45ms
+ POST /api/crawl/import 200 in 165ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 45ms
+ POST /api/crawl/import 200 in 21ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 33ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 27ms
+ ✓ Compiled /api/admin/crawl in 199ms (477 modules)
+ GET /api/admin/crawl 401 in 242ms
+ ✓ Compiled in 386ms (1087 modules)
+ ✓ Compiled in 240ms (723 modules)
+ ✓ Compiled /api/admin/crawl in 182ms (477 modules)
+[抓取] 开始执行全量抓取...
+ ✓ Compiled /api/crawl/import in 90ms (479 modules)
+ POST /api/crawl/import 200 in 232ms
+ POST /api/crawl/import 200 in 45ms
+ POST /api/crawl/import 200 in 185ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 45ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 33ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 24ms
+[抓取] 完成：11/11 平台，341 条，耗时 13.3s
+ POST /api/admin/crawl 200 in 13727ms
+ GET /api/admin/crawl 200 in 17ms
+ ✓ Compiled in 400ms (1087 modules)
+ ✓ Compiled in 177ms (723 modules)
+ ✓ Compiled in 202ms (723 modules)
+ ✓ Compiled in 247ms (723 modules)
+ ✓ Compiled /api/admin/crawl-schedule in 674ms (1089 modules)
+ ✓ Compiled in 0ms (481 modules)
+ GET /api/admin/crawl-schedule 200 in 625ms
+ GET /api/admin/crawl-schedule 200 in 7ms
+ GET /api/admin/crawl 200 in 639ms
+ GET /api/admin/crawl 200 in 7ms
+ GET / 200 in 299ms
+ ✓ Compiled /api/nodes in 318ms (477 modules)
+ ✓ Compiled (483 modules)
+ GET /api/auth/me 200 in 570ms
+ GET /api/categories 200 in 571ms
+ GET /api/auth/me 200 in 26ms
+ GET /api/nodes?limit=12&offset=0 200 in 606ms
+ GET /api/categories 200 in 32ms
+ GET /api/nodes?limit=12&offset=0 200 in 25ms
+ GET /admin/crawl 200 in 307ms
+ ✓ Compiled /api/admin/stats in 176ms (486 modules)
+ GET /api/admin/stats 200 in 254ms
+ GET /api/admin/stats 200 in 19ms
+ ✓ Compiled /api/admin/crawl-schedule in 155ms (488 modules)
+ ✓ Compiled (491 modules)
+ GET /api/admin/crawl-schedule 200 in 340ms
+ GET /api/admin/crawl-schedule 200 in 8ms
+ GET /api/admin/crawl 200 in 359ms
+ GET /api/admin/crawl 200 in 8ms
+ PATCH /api/admin/crawl-schedule 200 in 8ms
+ GET /admin/crawl 200 in 261ms
+ GET /api/admin/stats 200 in 24ms
+ GET /api/admin/stats 200 in 13ms
+ GET /api/admin/crawl-schedule 200 in 10ms
+ GET /api/admin/crawl 200 in 16ms
+ GET /api/admin/crawl-schedule 200 in 11ms
+ GET /api/admin/crawl 200 in 13ms
+ PATCH /api/admin/crawl-schedule 200 in 6ms
+ PATCH /api/admin/crawl-schedule 200 in 10ms
+ GET /admin/crawl 200 in 293ms
+ GET /api/admin/stats 200 in 27ms
+ GET /api/admin/stats 200 in 16ms
+ GET /api/admin/crawl-schedule 200 in 13ms
+ GET /api/admin/crawl 200 in 14ms
+ GET /api/admin/crawl-schedule 200 in 11ms
+ GET /api/admin/crawl 200 in 14ms
+ ✓ Compiled /admin in 283ms (371 modules)
+ ✓ Compiled /api/admin/stats in 107ms (484 modules)
+ GET /api/admin/stats 200 in 341ms
+ GET /api/admin/stats 200 in 15ms
+ ✓ Compiled in 447ms (1085 modules)
+ GET /docs 200 in 279ms
+ ✓ Compiled /api/nodes in 165ms (473 modules)
+ ✓ Compiled (479 modules)
+ GET /api/auth/me 200 in 454ms
+ GET /api/categories 200 in 455ms
+ GET /api/auth/me 200 in 26ms
+ GET /api/nodes?limit=12&offset=0 200 in 488ms
+ GET /api/categories 200 in 32ms
+ GET /api/nodes?limit=12&offset=0 200 in 17ms
+ ✓ Compiled /admin/platforms in 217ms (485 modules)
+ ✓ Compiled /api/admin/platforms in 175ms (488 modules)
+ GET /api/admin/platforms 200 in 238ms
+ GET /api/admin/platforms 200 in 10ms
+ GET / 200 in 391ms
+ GET /api/auth/me 200 in 93ms
+ GET /api/categories 200 in 93ms
+ GET /api/auth/me 200 in 18ms
+ GET /api/categories 200 in 24ms
+ GET /api/nodes?limit=12&offset=0 200 in 128ms
+ GET /api/nodes?limit=12&offset=0 200 in 18ms
+ ✓ Compiled /admin/crawl in 349ms (490 modules)
+ ✓ Compiled /api/admin/crawl in 165ms (494 modules)
+ ✓ Compiled (496 modules)
+ GET /api/admin/crawl 401 in 336ms
+ GET /api/admin/crawl-schedule 401 in 343ms
+ GET /api/admin/crawl 401 in 8ms
+ GET /api/admin/crawl-schedule 401 in 11ms
+ GET /admin/crawl 200 in 324ms
+ ✓ Compiled /api/admin/stats in 117ms (498 modules)
+ GET /api/admin/stats 401 in 173ms
+ GET /api/admin/stats 401 in 13ms
+ ✓ Compiled /admin/login in 222ms (505 modules)
+ ✓ Compiled /api/admin/auth/login in 198ms (503 modules)
+ POST /api/admin/auth/login 200 in 498ms
+ GET /api/admin/stats 200 in 25ms
+ GET /api/admin/stats 200 in 13ms
+ GET /api/admin/stats 200 in 17ms
+ GET /api/admin/crawl-schedule 200 in 20ms
+ GET /api/admin/crawl 200 in 21ms
+ GET /api/admin/crawl-schedule 200 in 9ms
+ GET /api/admin/crawl 200 in 13ms
+ GET /admin/crawl 200 in 297ms
+ GET /api/admin/stats 200 in 24ms
+ GET /api/admin/stats 200 in 17ms
+ GET /api/admin/crawl-schedule 200 in 14ms
+ GET /api/admin/crawl 200 in 15ms
+ GET /api/admin/crawl-schedule 200 in 11ms
+ GET /api/admin/crawl 200 in 14ms
+[抓取] 开始执行全量抓取...
+ ✓ Compiled /api/crawl/import in 199ms (484 modules)
+ POST /api/crawl/import 200 in 284ms
+ POST /api/crawl/import 200 in 44ms
+ POST /api/crawl/import 200 in 58ms
+ POST /api/crawl/import 200 in 18ms
+ POST /api/crawl/import 200 in 37ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 36ms
+ POST /api/crawl/import 200 in 38ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 23ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 23ms
+[抓取] 完成：19/19 平台，594 条，耗时 32.5s
+ POST /api/admin/crawl 200 in 32484ms
+ GET /api/admin/crawl 200 in 11ms
+ ✓ Compiled /api/admin/auth/login in 176ms (478 modules)
+ POST /api/admin/auth/login 200 in 289ms
+ ✓ Compiled /api/admin/crawl in 93ms (480 modules)
+ GET /api/admin/crawl 200 in 128ms
+ ✓ Compiled /api/admin/crawl-schedule in 774ms (1207 modules)
+ GET /api/admin/crawl-schedule 200 in 440ms
+ GET /api/admin/crawl 200 in 457ms
+ ✓ Compiled in 395ms (1207 modules)
+ ✓ Compiled in 0ms (483 modules)
+ ✓ Compiled in 1ms (483 modules)
+ ✓ Compiled in 1ms (483 modules)
+ GET /api/admin/crawl-schedule 200 in 415ms
+ GET /api/admin/crawl 200 in 445ms
+ GET /admin/crawl 200 in 291ms
+ ✓ Compiled /api/admin/stats in 168ms (477 modules)
+ GET /api/admin/stats 200 in 216ms
+ GET /api/admin/stats 200 in 18ms
+ ✓ Compiled /api/admin/crawl-schedule in 91ms (479 modules)
+ ✓ Compiled (482 modules)
+ GET /api/admin/crawl-schedule 200 in 218ms
+ GET /api/admin/crawl-schedule 200 in 8ms
+ GET /api/admin/crawl 200 in 237ms
+ GET /api/admin/crawl 200 in 9ms
+ GET /admin/crawl 200 in 288ms
+ GET /api/admin/stats 200 in 25ms
+ GET /api/admin/stats 200 in 15ms
+ GET /api/admin/crawl 200 in 12ms
+ GET /api/admin/crawl-schedule 200 in 14ms
+ GET /api/admin/crawl 200 in 12ms
+ GET /api/admin/crawl-schedule 200 in 14ms
+ GET / 200 in 288ms
+ ✓ Compiled /api/nodes in 246ms (484 modules)
+ ✓ Compiled (490 modules)
+ GET /api/auth/me 200 in 454ms
+ GET /api/categories 200 in 455ms
+ GET /api/auth/me 200 in 20ms
+ GET /api/categories 200 in 23ms
+ GET /api/nodes?limit=12&offset=0 200 in 486ms
+ GET /api/nodes?limit=12&offset=0 200 in 15ms
+ GET /admin/crawl 200 in 277ms
+ ✓ Compiled /api/admin/crawl-schedule in 479ms (1088 modules)
+ ✓ Compiled in 0ms (480 modules)
+ GET /api/admin/crawl-schedule 200 in 469ms
+ GET /api/admin/crawl 200 in 481ms
+ GET /admin/crawl 200 in 291ms
+ ✓ Compiled /api/admin/stats in 93ms (482 modules)
+ GET /api/admin/stats 200 in 136ms
+ GET /api/admin/stats 200 in 14ms
+ GET /api/admin/crawl-schedule 200 in 20ms
+ GET /api/admin/crawl 200 in 21ms
+ GET /api/admin/crawl-schedule 200 in 9ms
+ GET /api/admin/crawl 200 in 13ms
+ GET /admin/crawl 200 in 276ms
+ GET /api/admin/stats 200 in 13ms
+ GET /api/admin/stats 200 in 16ms
+ GET /api/admin/crawl-schedule 200 in 13ms
+ GET /api/admin/crawl 200 in 13ms
+ GET /api/admin/crawl-schedule 200 in 10ms
+ GET /api/admin/crawl 200 in 13ms
+ ✓ Compiled /admin/api-docs in 297ms (369 modules)
+ ✓ Compiled /api/admin/api-docs in 121ms (482 modules)
+ GET /api/admin/api-docs 200 in 361ms
+ GET /api/admin/api-docs 200 in 8ms
+ ✓ Compiled /admin/knowledge-base in 164ms (489 modules)
+ GET /api/admin/api-docs 200 in 28ms
+ GET /api/admin/api-docs 200 in 7ms
+ GET /admin/knowledge-base 200 in 295ms
+ ✓ Compiled /api/admin/stats in 136ms (478 modules)
+ GET /api/admin/stats 200 in 204ms
+ GET /api/admin/stats 200 in 17ms
+ ✓ Compiled /admin in 93ms (484 modules)
+ GET /api/admin/stats 200 in 27ms
+ GET /api/admin/stats 200 in 14ms
+ ✓ Compiled /admin/users in 213ms (483 modules)
+ ✓ Compiled /api/admin/users in 174ms (485 modules)
+ GET /api/admin/users?page=1&limit=20 200 in 232ms
+ GET /api/admin/users?page=1&limit=20 200 in 14ms
+ ○ Compiling /admin/items ...
+ ✓ Compiled /admin/items in 548ms (1218 modules)
+ ✓ Compiled /api/admin/items in 170ms (493 modules)
+ ✓ Compiled (495 modules)
+ GET /api/admin/platforms 200 in 364ms
+ GET /api/admin/items?page=1&limit=20 200 in 364ms
+ GET /api/admin/platforms 200 in 13ms
+ GET /api/admin/items?page=1&limit=20 200 in 17ms
+ GET /api/admin/items?page=2&limit=20 200 in 10ms
+ GET /api/admin/items?page=3&limit=20 200 in 10ms
+ GET /api/admin/items?page=4&limit=20 200 in 58ms
+ GET /api/admin/items?page=5&limit=20 200 in 11ms
+ GET /api/admin/items?page=6&limit=20 200 in 11ms
+ GET /api/admin/items?page=7&limit=20 200 in 10ms
+ GET /api/admin/items?page=8&limit=20 200 in 10ms
+ GET / 200 in 318ms
+ ✓ Compiled /api/nodes in 247ms (488 modules)
+ ✓ Compiled (494 modules)
+ GET /api/auth/me 200 in 567ms
+ GET /api/categories 200 in 569ms
+ GET /api/auth/me 200 in 23ms
+ GET /api/categories 200 in 25ms
+ GET /api/nodes?limit=12&offset=0 200 in 598ms
+ GET /api/nodes?limit=12&offset=0 200 in 16ms
+ ✓ Compiled /admin/platforms in 200ms (499 modules)
+ GET /api/admin/platforms 200 in 36ms
+ GET /api/admin/platforms 200 in 12ms
+ ✓ Compiled in 433ms (1087 modules)
+ ✓ Compiled in 240ms (727 modules)
+ ✓ Compiled /api/admin/platforms in 631ms (1093 modules)
+ ✓ Compiled in 1ms (476 modules)
+ GET /api/admin/platforms 200 in 602ms
+ GET /api/admin/platforms 200 in 10ms
+ GET /admin/platforms 200 in 302ms
+ ✓ Compiled /api/admin/stats in 204ms (478 modules)
+ GET /api/admin/stats 200 in 308ms
+ GET /api/admin/stats 200 in 21ms
+ GET /api/admin/platforms 200 in 13ms
+ GET /api/admin/platforms 200 in 13ms
+ ✓ Compiled /_not-found in 336ms (1082 modules)
+ PATCH /api/admin/platforms/reorder 404 in 694ms
+ ✓ Compiled /api/admin/platforms in 98ms (477 modules)
+ GET /api/admin/platforms 200 in 321ms
+ GET /admin/platforms 200 in 310ms
+ ✓ Compiled /api/admin/stats in 93ms (479 modules)
+ GET /api/admin/stats 200 in 136ms
+ GET /api/admin/stats 200 in 15ms
+ GET /api/admin/platforms 200 in 13ms
+ GET /api/admin/platforms 200 in 12ms
+ GET / 200 in 294ms
+ ✓ Compiled /api/nodes in 255ms (481 modules)
+ ✓ Compiled (487 modules)
+ GET /api/auth/me 200 in 493ms
+ GET /api/categories 200 in 491ms
+ GET /api/auth/me 200 in 20ms
+ GET /api/categories 200 in 24ms
+ GET /api/nodes?limit=12&offset=0 200 in 528ms
+ GET /api/nodes?limit=12&offset=0 200 in 17ms
+ GET /admin/platforms 200 in 255ms
+ GET /api/admin/stats 200 in 15ms
+ GET /api/admin/stats 200 in 12ms
+ GET /api/admin/platforms 200 in 13ms
+ GET /api/admin/platforms 200 in 10ms
+ PATCH /api/admin/platforms/reorder 404 in 278ms
+ GET /api/admin/platforms 200 in 13ms
+ ✓ Compiled /api/admin/auth/login in 229ms (490 modules)
+ POST /api/admin/auth/login 200 in 382ms
+ PATCH /api/admin/platforms/reorder 404 in 275ms
+ ✓ Compiled in 774ms (1198 modules)
+ ✓ Compiled /api/admin/platforms/reorder in 103ms (476 modules)
+ PATCH /api/admin/platforms/reorder 401 in 133ms
+ ✓ Compiled /api/admin/auth/login in 95ms (479 modules)
+ POST /api/admin/auth/login 200 in 193ms
+ PATCH /api/admin/platforms/reorder 200 in 11ms
+ POST /api/admin/auth/login 200 in 66ms
+ PATCH /api/admin/platforms/reorder 200 in 11ms
+ PATCH /api/admin/platforms/reorder 200 in 33ms
+ ✓ Compiled /api/admin/platforms in 173ms (481 modules)
+ GET /api/admin/platforms 200 in 215ms
+ PATCH /api/admin/platforms/reorder 200 in 36ms
+ GET /api/admin/platforms 200 in 13ms
+ GET / 200 in 308ms
+ ✓ Compiled /api/nodes in 274ms (480 modules)
+ ✓ Compiled (486 modules)
+ GET /api/auth/me 200 in 509ms
+ GET /api/categories 200 in 506ms
+ GET /api/auth/me 200 in 22ms
+ GET /api/categories 200 in 25ms
+ GET /api/nodes?limit=12&offset=0 200 in 539ms
+ GET /api/nodes?limit=12&offset=0 200 in 18ms
+ GET / 200 in 304ms
+ GET /api/auth/me 200 in 14ms
+ GET /api/categories 200 in 16ms
+ GET /api/nodes?limit=12&offset=0 200 in 29ms
+ GET /api/auth/me 200 in 20ms
+ GET /api/categories 200 in 23ms
+ GET /api/nodes?limit=12&offset=0 200 in 23ms
+ ✓ Compiled /admin/crawl in 275ms (372 modules)
+ ✓ Compiled /api/admin/crawl in 103ms (483 modules)
+ ✓ Compiled (488 modules)
+ GET /api/admin/crawl-schedule 200 in 326ms
+ GET /api/admin/crawl-schedule 200 in 9ms
+ GET /api/admin/crawl 200 in 341ms
+ GET /api/admin/crawl 200 in 8ms
+[抓取] 开始执行全量抓取...
+ ✓ Compiled /api/crawl/import in 181ms (490 modules)
+ POST /api/crawl/import 200 in 299ms
+ POST /api/crawl/import 200 in 46ms
+ POST /api/crawl/import 200 in 167ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 47ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 29ms
+ POST /api/crawl/import 200 in 34ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 69ms
+ POST /api/crawl/import 200 in 48ms
+ POST /api/crawl/import 200 in 22ms
+ POST /api/crawl/import 200 in 24ms
+ POST /api/crawl/import 200 in 33ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 25ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 25ms
+[抓取] 完成：19/19 平台，595 条，耗时 23.5s
+ POST /api/admin/crawl 200 in 23500ms
+ GET /api/admin/crawl 200 in 14ms
+ GET /admin/crawl 200 in 299ms
+ ✓ Compiled /api/admin/stats in 177ms (480 modules)
+ GET /api/admin/stats 200 in 224ms
+ GET /api/admin/stats 200 in 17ms
+ ✓ Compiled /api/admin/crawl-schedule in 96ms (482 modules)
+ ✓ Compiled (485 modules)
+ GET /api/admin/crawl-schedule 200 in 230ms
+ GET /api/admin/crawl-schedule 200 in 7ms
+ GET /api/admin/crawl 200 in 246ms
+ GET /api/admin/crawl 200 in 7ms
+ GET / 200 in 303ms
+ ✓ Compiled /api/nodes in 259ms (487 modules)
+ ✓ Compiled (493 modules)
+ GET /api/auth/me 200 in 479ms
+ GET /api/categories 200 in 480ms
+ GET /api/auth/me 200 in 20ms
+ GET /api/categories 200 in 23ms
+ GET /api/nodes?limit=12&offset=0 200 in 514ms
+ GET /api/nodes?limit=12&offset=0 200 in 18ms
+ GET / 200 in 283ms
+ GET /api/auth/me 200 in 14ms
+ GET /api/categories 200 in 16ms
+ GET /api/nodes?limit=12&offset=0 200 in 30ms
+ GET /api/auth/me 200 in 20ms
+ GET /api/categories 200 in 22ms
+ GET /api/nodes?limit=12&offset=0 200 in 23ms
+ GET /api/nodes?limit=3 200 in 34ms
+ ✓ Compiled in 426ms (1211 modules)
+ ✓ Compiled in 274ms (1097 modules)
+ ✓ Compiled in 681ms (1097 modules)
+ GET / 200 in 319ms
+ ✓ Compiled /api/nodes in 170ms (479 modules)
+ ✓ Compiled (485 modules)
+ GET /api/auth/me 200 in 539ms
+ GET /api/categories 200 in 541ms
+ GET /api/auth/me 200 in 20ms
+ GET /api/categories 200 in 26ms
+ GET /api/nodes?limit=12&offset=0 200 in 580ms
+ GET /api/nodes?limit=12&offset=0 200 in 22ms
+ GET /admin/crawl 200 in 285ms
+ ✓ Compiled /api/admin/stats in 144ms (488 modules)
+ GET /api/admin/stats 200 in 203ms
+ GET /api/admin/stats 200 in 14ms
+ ✓ Compiled /api/admin/crawl-schedule in 164ms (490 modules)
+ ✓ Compiled (493 modules)
+ GET /api/admin/crawl-schedule 200 in 349ms
+ GET /api/admin/crawl-schedule 200 in 7ms
+ GET /api/admin/crawl 200 in 367ms
+ GET /api/admin/crawl 200 in 7ms
+ GET /api/nodes?limit=1 200 in 51ms
+ ✓ Compiled /api/crawl/import in 169ms (400 modules)
+ POST /api/crawl/import 200 in 285ms
+ POST /api/crawl/import 200 in 45ms
+ POST /api/crawl/import 200 in 246ms
+ POST /api/crawl/import 200 in 17ms
+ POST /api/crawl/import 200 in 48ms
+ POST /api/crawl/import 200 in 16ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 36ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 27ms
+ POST /api/crawl/import 200 in 26ms
+ POST /api/crawl/import 200 in 28ms
+ POST /api/crawl/import 200 in 26ms
+ ✓ Compiled in 486ms (1130 modules)
+ ✓ Compiled in 432ms (1097 modules)
+ ✓ Compiled in 416ms (1097 modules)
+ ✓ Compiled in 407ms (1097 modules)
+ ✓ Compiled in 427ms (1097 modules)
+ ✓ Compiled in 165ms (730 modules)
+ GET / 200 in 293ms
+ ✓ Compiled /api/categories in 376ms (479 modules)
+ ✓ Compiled (485 modules)
+ GET /api/auth/me 200 in 773ms
+ GET /api/categories 200 in 775ms
+ GET /api/auth/me 200 in 22ms
+ GET /api/categories 200 in 25ms
+ GET /api/nodes?limit=12&offset=0 200 in 812ms
+ GET /api/nodes?limit=12&offset=0 200 in 23ms
+ GET / 200 in 295ms
+ GET /api/auth/me 200 in 15ms
+ GET /api/categories 200 in 16ms
+ GET /api/nodes?limit=12&offset=0 200 in 32ms
+ GET /api/auth/me 200 in 21ms
+ GET /api/categories 200 in 24ms
+ GET /api/nodes?limit=12&offset=0 200 in 25ms
+ GET /admin/crawl 200 in 302ms
+ ✓ Compiled /api/admin/stats in 207ms (488 modules)
+ GET /api/admin/stats 200 in 304ms
+ GET /api/admin/stats 200 in 16ms
+ ✓ Compiled /api/admin/crawl-schedule in 158ms (490 modules)
+ ✓ Compiled (493 modules)
+ GET /api/admin/crawl-schedule 200 in 344ms
+ GET /api/admin/crawl-schedule 200 in 8ms
+ GET /api/admin/crawl 200 in 364ms
+ GET /api/admin/crawl 200 in 8ms
+ ✓ Compiled /admin/cards in 279ms (502 modules)
+ ✓ Compiled /api/admin/cards in 118ms (505 modules)
+ GET /api/admin/cards?page=1&limit=20 200 in 172ms
+ GET /api/admin/cards?page=1&limit=20 200 in 10ms
+ GET /api/admin/stats 200 in 24ms
+ GET /api/admin/stats 200 in 12ms
+ ✓ Compiled /admin/users in 167ms (510 modules)
+ ✓ Compiled /api/admin/users in 133ms (512 modules)
+ GET /api/admin/users?page=1&limit=20 200 in 176ms
+ GET /api/admin/users?page=1&limit=20 200 in 13ms
+ ✓ Compiled /api/admin/items in 247ms (514 modules)
+ ✓ Compiled (516 modules)
+ GET /api/admin/platforms 200 in 555ms
+ GET /api/admin/items?page=1&limit=20 200 in 555ms
+ GET /api/admin/platforms 200 in 13ms
+ GET /api/admin/items?page=1&limit=20 200 in 16ms
+ GET /api/admin/cards?page=1&limit=20 200 in 13ms
+ GET /api/admin/cards?page=1&limit=20 200 in 8ms
+ GET /api/admin/crawl-schedule 200 in 14ms
+ GET /api/admin/crawl 200 in 16ms
+ GET /api/admin/crawl-schedule 200 in 9ms
+ GET /api/admin/crawl 200 in 13ms
+ ✓ Compiled /admin/api-docs in 289ms (521 modules)
+ ✓ Compiled /api/admin/api-docs in 154ms (523 modules)
+ GET /api/admin/api-docs 200 in 199ms
+ GET /api/admin/api-docs 200 in 7ms
+ GET /api/admin/users?page=1&limit=20 200 in 66ms
+ GET /api/admin/users?page=1&limit=20 200 in 16ms
+ GET /api/admin/stats 200 in 24ms
+ GET /api/admin/stats 200 in 12ms
+ GET / 200 in 305ms
+ GET /api/auth/me 200 in 31ms
+ GET /api/categories 200 in 33ms
+ GET /api/auth/me 200 in 14ms
+ GET /api/categories 200 in 22ms
+ GET /api/nodes?limit=12&offset=0 200 in 69ms
+ GET /api/nodes?limit=12&offset=0 200 in 22ms
+ ✓ Compiled /n/[hashid] in 453ms (552 modules)
+ ✓ Compiled /api/favorites/[hashid] in 131ms (554 modules)
+ ✓ Compiled (556 modules)
+ GET /api/favorites/people-hot 200 in 376ms
+ GET /api/nodes/people-hot 200 in 391ms
+ GET /api/favorites/people-hot 200 in 10ms
+ GET /api/auth/me 200 in 17ms
+ GET /api/categories 200 in 21ms
+ GET /api/auth/me 200 in 18ms
+ GET /api/categories 200 in 22ms
+ GET /api/nodes?limit=12&offset=0 200 in 55ms
+ GET /api/nodes?limit=12&offset=0 200 in 19ms

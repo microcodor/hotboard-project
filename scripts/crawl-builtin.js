@@ -1,0 +1,323 @@
+/**
+ * HotBoard 内置抓取模块（纯 JS 版）
+ * Worker 直接 require 使用，不依赖外部进程
+ */
+
+const HOTBOARD_URL = process.env.HOTBOARD_URL || 'http://localhost:3000'
+
+const HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+  'Accept': 'application/json, text/plain, */*',
+  'Accept-Language': 'zh-CN,zh;q=0.9',
+}
+
+function dedupItems(items) {
+  const seen = new Set()
+  return items.filter(item => {
+    const key = (item.title || '').trim().toLowerCase()
+    if (!key || seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
+}
+
+async function syncToHotBoard(platform, items) {
+  const res = await fetch(`${HOTBOARD_URL}/api/crawl/import`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ platform, items }),
+    signal: AbortSignal.timeout(30000),
+  })
+  const data = await res.json()
+  if (!data.success) throw new Error(data.error || '同步失败')
+  return data
+}
+
+async function fetchWeibo() {
+  const res = await fetch('https://weibo.com/ajax/side/hotSearch', {
+    headers: { ...HEADERS, 'Referer': 'https://weibo.com/' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const data = await res.json()
+  return (data?.data?.realtime || []).slice(0, 50).map((item, i) => ({
+    title: item.word || item.note || '',
+    url: `https://s.weibo.com/weibo?q=${encodeURIComponent(item.word || '')}`,
+    hot: item.num || 0,
+    rank: i + 1,
+    description: item.label_name || '',
+  })).filter(i => i.title)
+}
+
+async function fetchZhihu() {
+  const res = await fetch('https://www.zhihu.com/api/v4/creators/rank/hot?domain=0&limit=50', {
+    headers: { ...HEADERS, 'Referer': 'https://www.zhihu.com/' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const data = await res.json()
+  return (data?.data || []).map((item, i) => ({
+    title: item.question?.title || item.title || '',
+    url: item.question?.url || `https://www.zhihu.com/question/${item.question?.id}`,
+    hot: item.heat_value || 0,
+    rank: i + 1,
+    description: item.excerpt || '',
+  })).filter(i => i.title)
+}
+
+async function fetchToutiao() {
+  const res = await fetch('https://www.toutiao.com/hot-event/hot-board/?origin=toutiao_pc', {
+    headers: { ...HEADERS, 'Referer': 'https://www.toutiao.com/' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const data = await res.json()
+  return (data?.data || []).slice(0, 50).map((item, i) => ({
+    title: item.Title || '',
+    url: item.Url || `https://www.toutiao.com/trending/${item.ClusterId}/`,
+    hot: item.HotValue || 0,
+    rank: i + 1,
+    description: item.LabelDesc || '',
+  })).filter(i => i.title)
+}
+
+async function fetchJuejin() {
+  const res = await fetch('https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed', {
+    method: 'POST',
+    headers: { ...HEADERS, 'Content-Type': 'application/json', 'Referer': 'https://juejin.cn/' },
+    body: JSON.stringify({ id_type: 2, sort_type: 200, cate_id: '6809637767543259144', cursor: '0', limit: 30 }),
+    signal: AbortSignal.timeout(10000),
+  })
+  const data = await res.json()
+  return (data?.data || []).map((item, i) => ({
+    title: item.article_info?.title || '',
+    url: `https://juejin.cn/post/${item.article_id}`,
+    hot: item.article_info?.view_count || 0,
+    rank: i + 1,
+    description: item.article_info?.brief_content || '',
+  })).filter(i => i.title)
+}
+
+async function fetchDouyin() {
+  const res = await fetch('https://www.douyin.com/aweme/v1/web/hot/search/list/?device_platform=webapp&aid=6383&channel=channel_pc_web', {
+    headers: { ...HEADERS, 'Referer': 'https://www.douyin.com/' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const data = await res.json()
+  return (data?.data?.word_list || []).slice(0, 50).map((item, i) => ({
+    title: item.word || '',
+    url: `https://www.douyin.com/search/${encodeURIComponent(item.word || '')}`,
+    hot: item.hot_value || 0,
+    rank: i + 1,
+    description: item.label || '',
+  })).filter(i => i.title)
+}
+
+async function fetchSspai() {
+  const res = await fetch('https://sspai.com/feed', {
+    headers: { ...HEADERS, 'Accept': 'application/rss+xml,*/*', 'Referer': 'https://sspai.com/' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const xml = await res.text()
+  const items = []
+  for (const m of xml.matchAll(/<item>([\s\S]*?)<\/item>/g)) {
+    const block = m[1]
+    const title = block.match(/<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/title>/)?.[1] || ''
+    const link = block.match(/<link>(.*?)<\/link>/)?.[1] || block.match(/<guid>(.*?)<\/guid>/)?.[1] || ''
+    const desc = (block.match(/<description>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/description>/)?.[1] || '').replace(/<[^>]+>/g, '').substring(0, 100)
+    if (title) items.push({ title: title.trim(), url: link.trim(), hot: 0, rank: items.length + 1, description: desc.trim() })
+    if (items.length >= 20) break
+  }
+  return items
+}
+
+async function fetch36kr() {
+  const res = await fetch('https://36kr.com/feed', {
+    headers: { ...HEADERS, 'Accept': 'application/rss+xml,*/*', 'Referer': 'https://36kr.com/' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const xml = await res.text()
+  const items = []
+  for (const m of xml.matchAll(/<item>([\s\S]*?)<\/item>/g)) {
+    const block = m[1]
+    const title = block.match(/<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/title>/)?.[1] || ''
+    const link = block.match(/<link>(.*?)<\/link>/)?.[1] || ''
+    const desc = (block.match(/<description>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/description>/)?.[1] || '').replace(/<[^>]+>/g, '').substring(0, 100)
+    if (title) items.push({ title: title.trim(), url: link.trim(), hot: 0, rank: items.length + 1, description: desc.trim() })
+    if (items.length >= 20) break
+  }
+  return items
+}
+
+async function fetchTencent() {
+  const res = await fetch('https://r.inews.qq.com/gw/event/hot_ranking_list?page_size=30', {
+    headers: { ...HEADERS, 'Referer': 'https://news.qq.com/' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const data = await res.json()
+  return (data?.idlist?.[0]?.newslist || []).filter(i => i.title && i.hotEvent?.hotScore > 0).slice(0, 30).map((item, i) => ({
+    title: item.title || '',
+    url: item.url || `https://news.qq.com/rain/a/${item.id}.htm`,
+    hot: item.hotEvent?.hotScore || 0,
+    rank: i + 1,
+    description: item.abstract || '',
+  })).filter(i => i.title)
+}
+
+async function fetchPeopleDaily() {
+  const rssUrls = ['http://www.people.com.cn/rss/politics.xml', 'http://www.people.com.cn/rss/world.xml', 'http://www.people.com.cn/rss/society.xml']
+  const allItems = []
+  for (const url of rssUrls) {
+    try {
+      const res = await fetch(url, { headers: { ...HEADERS, 'Accept': 'application/rss+xml,*/*' }, signal: AbortSignal.timeout(8000) })
+      const xml = await res.text()
+      for (const m of xml.matchAll(/<item>([\s\S]*?)<\/item>/g)) {
+        const block = m[1]
+        const title = block.match(/<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/title>/)?.[1] || ''
+        const link = block.match(/<link>(.*?)<\/link>/)?.[1] || ''
+        if (title?.trim()) allItems.push({ title: title.trim(), url: link.trim(), hot: 0 })
+        if (allItems.length >= 30) break
+      }
+    } catch {}
+    if (allItems.length >= 30) break
+    await new Promise(r => setTimeout(r, 300))
+  }
+  const seen = new Set()
+  return allItems.filter(i => { if (seen.has(i.title)) return false; seen.add(i.title); return true }).slice(0, 30)
+    .map((item, i) => ({ ...item, rank: i + 1, description: '' }))
+}
+
+async function fetchXinhua() {
+  const rssUrls = ['http://www.xinhuanet.com/world/news_world.xml', 'http://www.xinhuanet.com/politics/news_politics.xml', 'http://www.xinhuanet.com/society/news_society.xml']
+  const allItems = []
+  for (const url of rssUrls) {
+    try {
+      const res = await fetch(url, { headers: { ...HEADERS, 'Accept': 'application/rss+xml,*/*' }, signal: AbortSignal.timeout(8000) })
+      const xml = await res.text()
+      for (const m of xml.matchAll(/<item>([\s\S]*?)<\/item>/g)) {
+        const block = m[1]
+        const title = block.match(/<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/title>/)?.[1] || ''
+        const link = block.match(/<link>(.*?)<\/link>/)?.[1] || block.match(/<guid>(.*?)<\/guid>/)?.[1] || ''
+        if (title?.trim() && !title.includes('<a href')) allItems.push({ title: title.trim(), url: link.trim(), hot: 0 })
+        if (allItems.length >= 30) break
+      }
+    } catch {}
+    if (allItems.length >= 30) break
+    await new Promise(r => setTimeout(r, 300))
+  }
+  const seen = new Set()
+  return allItems.filter(i => { if (seen.has(i.title)) return false; seen.add(i.title); return true }).slice(0, 30)
+    .map((item, i) => ({ ...item, rank: i + 1, description: '' }))
+}
+
+async function fetchGitHub() {
+  const since = new Date(Date.now() - 7 * 86400000).toISOString().split('T')[0]
+  const res = await fetch(`https://api.github.com/search/repositories?q=created:>${since}&sort=stars&order=desc&per_page=25`, {
+    headers: { 'User-Agent': 'HotBoard/1.0', 'Accept': 'application/vnd.github.v3+json' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const data = await res.json()
+  return (data.items || []).map((item, i) => ({
+    title: `${item.full_name} — ${(item.description || '').substring(0, 60)}`,
+    url: item.html_url,
+    hot: item.stargazers_count,
+    rank: i + 1,
+    description: `⭐ ${item.stargazers_count} | ${item.language || 'Unknown'}`,
+  }))
+}
+
+async function fetchDevTo() {
+  const res = await fetch('https://dev.to/api/articles?top=7&per_page=25', {
+    headers: { 'User-Agent': 'HotBoard/1.0', 'Accept': 'application/json' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const data = await res.json()
+  return (data || []).map((item, i) => ({
+    title: item.title || '',
+    url: item.url || `https://dev.to${item.path}`,
+    hot: item.positive_reactions_count || 0,
+    rank: i + 1,
+    description: `❤️ ${item.positive_reactions_count} | 💬 ${item.comments_count}`,
+  })).filter(i => i.title)
+}
+
+async function fetchLobsters() {
+  const res = await fetch('https://lobste.rs/hottest.json', {
+    headers: { 'User-Agent': 'HotBoard/1.0', 'Accept': 'application/json' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const data = await res.json()
+  return (data || []).map((item, i) => ({
+    title: item.title || '',
+    url: item.url || `https://lobste.rs${item.short_id_url}`,
+    hot: item.score || 0,
+    rank: i + 1,
+    description: `🔺 ${item.score} | 💬 ${item.comment_count}`,
+  })).filter(i => i.title)
+}
+
+async function fetchHNBest() {
+  const idsRes = await fetch('https://hacker-news.firebaseio.com/v0/beststories.json', {
+    headers: { 'User-Agent': 'HotBoard/1.0' },
+    signal: AbortSignal.timeout(10000),
+  })
+  const ids = await idsRes.json()
+  const items = await Promise.all(ids.slice(0, 25).map(id =>
+    fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`, {
+      headers: { 'User-Agent': 'HotBoard/1.0' },
+      signal: AbortSignal.timeout(8000),
+    }).then(r => r.json()).catch(() => null)
+  ))
+  return items.filter(i => i && i.title && i.url).map((item, i) => ({
+    title: item.title,
+    url: item.url || `https://news.ycombinator.com/item?id=${item.id}`,
+    hot: item.score || 0,
+    rank: i + 1,
+    description: `🔺 ${item.score} | 💬 ${item.descendants || 0}`,
+  }))
+}
+
+// 平台配置
+const PLATFORMS = [
+  { id: 'weibo-hot',       name: '微博热搜',    fetch: fetchWeibo },
+  { id: 'zhihu-hot',       name: '知乎热榜',    fetch: fetchZhihu },
+  { id: 'toutiao-hot',     name: '头条热榜',    fetch: fetchToutiao },
+  { id: 'juejin-hot',      name: '掘金热榜',    fetch: fetchJuejin },
+  { id: 'douyin-hot',      name: '抖音热点',    fetch: fetchDouyin },
+  { id: 'sspai-hot',       name: '少数派',      fetch: fetchSspai },
+  { id: '36kr-hot',        name: '36氪',        fetch: fetch36kr },
+  { id: 'tencent-hot',     name: '腾讯新闻',    fetch: fetchTencent },
+  { id: 'people-hot',     name: '人民日报',    fetch: fetchPeopleDaily },
+  { id: 'xinhua-hot',     name: '新华社',      fetch: fetchXinhua },
+  { id: 'github-trending', name: 'GitHub',     fetch: fetchGitHub },
+  { id: 'devto-hot',       name: 'Dev.to',     fetch: fetchDevTo },
+  { id: 'lobsters-hot',    name: 'Lobsters',   fetch: fetchLobsters },
+  { id: 'hn-best',         name: 'HN Best',    fetch: fetchHNBest },
+]
+
+// 国外/特殊平台（qclaw-crawl-sync 的部分）
+const EXTRA_PLATFORMS = [
+  // 百度、B站、豆瓣、澎湃、Hacker News 已包含在上面
+]
+
+// 主函数
+async function crawlAll() {
+  const results = []
+
+  for (const p of PLATFORMS) {
+    try {
+      const raw = await p.fetch()
+      const deduped = dedupItems(raw)
+      const items = deduped.map((item, i) => ({ ...item, rank: i + 1 }))
+      await syncToHotBoard(p.id, items)
+      results.push({ name: p.name, id: p.id, success: true, count: items.length })
+      console.log(`✅ ${p.name}: ${items.length}条`)
+    } catch (e) {
+      results.push({ name: p.name, id: p.id, success: false, count: 0, error: e.message })
+      console.log(`❌ ${p.name}: ${e.message}`)
+    }
+    await new Promise(r => setTimeout(r, 500))
+  }
+
+  return results
+}
+
+// 导出
+module.exports = { crawlAll, PLATFORMS }

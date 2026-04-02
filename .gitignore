@@ -1,0 +1,43 @@
+# Git 忽略文件
+
+# 依赖
+node_modules/
+/.pnp
+.pnp.js
+
+# 测试
+/coverage
+
+# 生产构建
+/.next/
+/out/
+/build/
+/dist/
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# 临时文件
+*.tmp
+*.temp
+.cache/
+
+# OS
+Thumbs.db
+.DS_Store

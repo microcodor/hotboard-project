@@ -1,0 +1,89 @@
+version: '3.8'
+
+services:
+  # PostgreSQL 数据库
+  postgres:
+    image: postgres:15-alpine
+    container_name: hotboard-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: hotboard
+      POSTGRES_USER: hotboard
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hotboard123}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init-database.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./sql/init-plans.sql:/docker-entrypoint-initdb.d/02-plans.sql
+      - ./sql/init-rate-limit.sql:/docker-entrypoint-initdb.d/03-rate-limit.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hotboard -d hotboard"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Next.js 应用
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hotboard-app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://hotboard:${POSTGRES_PASSWORD:-hotboard123}@postgres:5432/hotboard
+      JWT_SECRET: ${JWT_SECRET:-hotboard-secret-change-me-in-production}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@hotboard.com}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123456}
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: 1
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/nodes || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # 独立抓取调度器（脱离 QClaw）
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    container_name: hotboard-worker
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      HOTBOARD_URL: http://app:3000
+      WORKER_PORT: "3001"
+      NODE_ENV: production
+      TZ: Asia/Shanghai
+    ports:
+      - "3001:3001"  # Worker API 端口（管理后台通信）
+    # volumes:
+    #   - ./logs:/app/logs  # 可选：挂载日志目录
+
+  # Nginx 反向代理（可选，生产环境推荐）
+  nginx:
+    image: nginx:alpine
+    container_name: hotboard-nginx
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    profiles:
+      - production   # 仅 docker compose --profile production up 时启动
+
+volumes:
+  postgres_data:
+    driver: local

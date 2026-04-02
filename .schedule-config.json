@@ -1,0 +1,12 @@
+{
+  "schedules": [
+    {
+      "id": "s-1775037942961",
+      "expr": "0 */2 * * *",
+      "tz": "Asia/Shanghai",
+      "enabled": true,
+      "label": ""
+    }
+  ],
+  "updatedAt": "2026-04-01T10:05:56.620Z"
+}

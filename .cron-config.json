@@ -1,0 +1,10 @@
+{
+  "jobId": "4671d5f7-de56-4d8e-94a7-7e3e434deb3e",
+  "enabled": true,
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 * * * *",
+    "tz": "Asia/Shanghai",
+    "staggerMs": 300000
+  }
+}
