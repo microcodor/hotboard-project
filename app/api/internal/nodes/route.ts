@@ -6,7 +6,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import pool from '@/lib/db-pg'
 
-const INTERNAL_TOKEN = process.env.INTERNAL_TOKEN || 'hotboard-internal-2026'
+const INTERNAL_TOKEN = process.env.INTERNAL_TOKEN || process.env.NEXT_PUBLIC_INTERNAL_TOKEN || 'hotboard-internal-2026'
 
 export async function GET(request: NextRequest) {
   // 验证内部 Token
