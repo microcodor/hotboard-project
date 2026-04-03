@@ -68,8 +68,7 @@ export default function PreferencesForm() {
   }
 
   // 复制完整 key（优先从 localStorage，否则只复制预览）
-  const copyFullKey = async (id: number, preview: string) => {
-    const fullKey = getFullKey(id)
+  const copyFullKey = async (id: number, preview: string, fullKey: string | null) => {
     await copyKey(fullKey || preview)
   }
 
