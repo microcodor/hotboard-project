@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
           'id', n.hashid,
           'name', n.name,
           'displayName', n.display_name,
-          'category', n.category,
+          'category', n.category_name,
           'url', n.url
         ) as platform
       FROM items i
