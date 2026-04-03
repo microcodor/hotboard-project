@@ -136,21 +136,24 @@ export default function PreferencesForm() {
                 <div>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">{k.name}</p>
                   <p className="text-xs text-gray-400 font-mono">{k.keyPreview} 
-                      <span className="text-gray-300 text-xs">(点击右侧图标复制预览，完整 key 仅创建时可见)</span></p>
+                      </p>
                   <p className="text-xs text-gray-400">
                     创建于 {new Date(k.createdAt).toLocaleDateString('zh-CN')}
                     {k.lastUsedAt && ` · 最近使用 ${new Date(k.lastUsedAt).toLocaleDateString('zh-CN')}`}
                   </p>
                 </div>
-                <button onClick={() => copyKey(k.keyPreview)}
-                  title="点击复制（仅显示预览，需完整 key 请删除后重建）"
-                  className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors">
-                  <Copy className="w-4 h-4" />
-                </button>
-                <button onClick={() => deleteKey(k.id)}
-                  className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors">
-                  <Trash2 className="w-4 h-4" />
-                </button>
+                <div className="flex items-center gap-1">
+                  <button onClick={() => copyKey(k.keyPreview)}
+                    title="复制预览"
+                    className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors">
+                    <Copy className="w-4 h-4" />
+                  </button>
+                  <button onClick={() => deleteKey(k.id)}
+                    title="删除"
+                    className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors">
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             ))}
           </div>
