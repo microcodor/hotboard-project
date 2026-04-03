@@ -181,7 +181,7 @@ export default function HomePage() {
             ) : (
               categories.map(cat => (
                 <button
-                  key={cat.id}
+                  key={cat.id || cat.name}
                   onClick={() => handleCategoryChange(cat.name)}
                   className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                     selectedCategory === cat.name
