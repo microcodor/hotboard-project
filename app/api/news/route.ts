@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
         i.title,
         i.url,
         i.hot_value as "hotValue",
-        i.hot_text as "hotText",
+        i.hot_value::text as "hotText",
         i.rank,
         i.thumbnail,
         i.description,
