@@ -1,5 +1,10 @@
+/**
+ * 新闻列表 API
+ * GET /api/news
+ * 按抓取时间倒序返回所有新闻
+ */
 import { NextRequest, NextResponse } from 'next/server'
-import { query } from '@/lib/db'
+import pool from '@/lib/db-pg'
 
 export async function GET(request: NextRequest) {
   try {
@@ -8,7 +13,7 @@ export async function GET(request: NextRequest) {
     const offset = parseInt(searchParams.get('offset') || '0')
 
     // 按 created_at 降序排列，直接返回新闻列表
-    const result = await query(`
+    const result = await pool.query(`
       SELECT 
         i.id,
         i.title,
@@ -33,7 +38,7 @@ export async function GET(request: NextRequest) {
     `, [limit, offset])
 
     // 获取总数
-    const countResult = await query('SELECT COUNT(*) FROM items')
+    const countResult = await pool.query('SELECT COUNT(*) FROM items')
 
     return NextResponse.json({
       success: true,
