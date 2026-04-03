@@ -45,12 +45,31 @@ export default function PreferencesForm() {
       if (!data.success) throw new Error(data.error)
       setNewKeyValue(data.key)
       setNewKeyName('')
+      // 存储到 localStorage，key 为 'apiKey_' + id
+      try {
+        localStorage.setItem('apiKey_' + data.id, data.key)
+      } catch (e) { /* ignore */ }
       await loadKeys()
     } catch (e: any) {
       setMsg(e.message)
     } finally {
       setCreating(false)
     }
+  }
+
+  // 尝试从 localStorage 获取完整 key
+  const getFullKey = (id: number): string | null => {
+    try {
+      return localStorage.getItem('apiKey_' + id)
+    } catch {
+      return null
+    }
+  }
+
+  // 复制完整 key（优先从 localStorage，否则只复制预览）
+  const copyFullKey = async (id: number, preview: string) => {
+    const fullKey = getFullKey(id)
+    await copyKey(fullKey || preview)
   }
 
   const deleteKey = async (id: number) => {
@@ -143,7 +162,7 @@ export default function PreferencesForm() {
                   </p>
                 </div>
                 <div className="flex items-center gap-1">
-                  <button onClick={() => copyKey(k.keyPreview)}
+                  <button onClick={() => copyFullKey(k.id, k.keyPreview)}
                     title="复制预览"
                     className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors">
                     <Copy className="w-4 h-4" />
