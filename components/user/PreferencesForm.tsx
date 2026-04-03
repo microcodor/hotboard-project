@@ -59,6 +59,7 @@ export default function PreferencesForm() {
     setKeys(prev => prev.filter(k => k.id !== id))
   }
 
+  // 复制功能 - 注意：完整 key 仅在创建时显示一次，无法找回
   const copyKey = async (key: string) => {
     await navigator.clipboard.writeText(key)
     setCopied(true)
@@ -118,12 +119,18 @@ export default function PreferencesForm() {
               <div key={k.id} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
                 <div>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">{k.name}</p>
-                  <p className="text-xs text-gray-400 font-mono">{k.keyPreview}</p>
+                  <p className="text-xs text-gray-400 font-mono">{k.keyPreview} 
+                      <span className="text-gray-300 text-xs">(点击右侧图标复制预览，完整 key 仅创建时可见)</span></p>
                   <p className="text-xs text-gray-400">
                     创建于 {new Date(k.createdAt).toLocaleDateString('zh-CN')}
                     {k.lastUsedAt && ` · 最近使用 ${new Date(k.lastUsedAt).toLocaleDateString('zh-CN')}`}
                   </p>
                 </div>
+                <button onClick={() => copyKey(k.keyPreview)}
+                  title="点击复制（仅显示预览，需完整 key 请删除后重建）"
+                  className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors">
+                  <Copy className="w-4 h-4" />
+                </button>
                 <button onClick={() => deleteKey(k.id)}
                   className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded transition-colors">
                   <Trash2 className="w-4 h-4" />
