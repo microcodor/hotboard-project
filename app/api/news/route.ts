@@ -32,7 +32,7 @@ export async function GET(request: NextRequest) {
           'url', n.url
         ) as platform
       FROM items i
-      JOIN nodes n ON i.node_id = n.id
+      JOIN nodes n ON i.node_hashid = n.hashid
       ORDER BY i.created_at DESC
       LIMIT $1 OFFSET $2
     `, [limit, offset])
