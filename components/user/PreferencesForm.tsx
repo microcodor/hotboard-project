@@ -68,8 +68,8 @@ export default function PreferencesForm() {
   }
 
   // 复制完整 key（优先从 localStorage，否则只复制预览）
-  const copyFullKey = async (id: number, preview: string, fullKey: string | null) => {
-    await copyKey(fullKey || preview)
+  const copyFullKey = async (id: number, preview: string, fullKey: string | null, label = "Key") => {
+    await copyKey(fullKey || preview, label)
   }
 
   const deleteKey = async (id: number) => {
@@ -79,9 +79,8 @@ export default function PreferencesForm() {
   }
 
   // 复制功能 - 注意：完整 key 仅在创建时显示一次，无法找回
-  const copyKey = async (key: string) => {
+  const copyKey = async (key: string, label = 'Key') => {
     try {
-      // 兼容非 HTTPS 环境
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(key)
       } else {
@@ -95,9 +94,11 @@ export default function PreferencesForm() {
         document.body.removeChild(textarea)
       }
       setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      setMsg(`${label} 已复制到剪贴板`)
+      setTimeout(() => { setCopied(false); setMsg(null) }, 2000)
     } catch (e) {
-      console.error('Copy failed:', e)
+      setMsg('复制失败，请手动复制')
+      setTimeout(() => setMsg(null), 3000)
     }
   }
 
@@ -133,7 +134,7 @@ export default function PreferencesForm() {
             <p className="text-xs text-green-700 dark:text-green-400 mb-2 font-medium">⚠️ 请立即复制，此 Key 只显示一次</p>
             <div className="flex items-center gap-2">
               <code className="flex-1 text-xs bg-white dark:bg-gray-800 border border-green-200 dark:border-green-700 rounded px-2 py-1 break-all">{newKeyValue}</code>
-              <button onClick={() => copyKey(newKeyValue)}
+              <button onClick={() => copyKey(newKeyValue, '完整 Key')}
                 className="flex-shrink-0 p-1.5 text-green-600 hover:bg-green-100 rounded">
                 {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               </button>
@@ -162,7 +163,7 @@ export default function PreferencesForm() {
                   </p>
                 </div>
                 <div className="flex items-center gap-1">
-                  <button onClick={() => copyFullKey(k.id, k.keyPreview, k.fullKey)}
+                  <button onClick={() => copyFullKey(k.id, k.keyPreview, k.fullKey, k.fullKey ? '完整 Key' : 'Key 预览')}
                     title="复制预览"
                     className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors">
                     <Copy className="w-4 h-4" />
