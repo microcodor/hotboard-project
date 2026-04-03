@@ -27,12 +27,16 @@ export async function GET(request: NextRequest) {
        FROM api_keys WHERE user_id = $1 ORDER BY created_at DESC`,
       [userId]
     );
+    // 获取用户最新的 key（用于显示完整 key）
+    const latestKey = result.rows[0]
+    
     return NextResponse.json({
       success: true,
-      keys: result.rows.map(k => ({
+      keys: result.rows.map((k, idx) => ({
         id: k.id,
         name: k.name,
         keyPreview: k.key.substring(0, 8) + '...',  // 脱敏
+        fullKey: idx === 0 ? k.key : null,  // 只返回最新的完整 key
         isActive: k.is_active,
         lastUsedAt: k.last_used_at,
         createdAt: k.created_at,

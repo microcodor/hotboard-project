@@ -9,6 +9,7 @@ interface ApiKey {
   id: number
   name: string
   keyPreview: string
+  fullKey: string | null
   isActive: boolean
   lastUsedAt: string | null
   createdAt: string
@@ -162,7 +163,7 @@ export default function PreferencesForm() {
                   </p>
                 </div>
                 <div className="flex items-center gap-1">
-                  <button onClick={() => copyFullKey(k.id, k.keyPreview)}
+                  <button onClick={() => copyFullKey(k.id, k.keyPreview, k.fullKey)}
                     title="复制预览"
                     className="p-1.5 text-gray-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded transition-colors">
                     <Copy className="w-4 h-4" />
