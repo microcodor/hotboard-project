@@ -6,36 +6,25 @@ export const metadata: Metadata = {
   description: 'HotBoard 热榜聚合 API 接口文档',
 }
 
-// 只保留公开接口
+// 对外公开接口（需要 API Key 鉴权）
 const ENDPOINTS = [
   {
+    method: 'GET', path: '/api/platforms',
+    desc: '获取所有支持的新闻平台列表',
+    params: [],
+    response: `{ success: true, data: [{ id, name, displayName, category, url, itemsCount, updatedAt }], total }`,
+  },
+  {
+    method: 'GET', path: '/api/platforms?platform=xxx',
+    desc: '根据平台 ID 获取该平台的热点列表（按排名排序）',
+    params: ['platform=平台ID（必填，如 toutiao-hot）', 'limit=每页数量(默认50, 最大100)', 'offset=偏移量(默认0)'],
+    response: `{ success: true, platform: { id, name, displayName, category }, data: [{ id, title, url, hotValue, rank, ... }], total, hasMore }`,
+  },
+  {
     method: 'GET', path: '/api/nodes',
-    desc: '获取所有榜单节点及其热点数据',
-    params: ['cid=分类名（可选）', 'limit=数量(默认12)', 'offset=偏移(可选)'],
-    response: `{ success: true, data: [...nodes], total }`,
-  },
-  {
-    method: 'GET', path: '/api/nodes/[hashid]',
-    desc: '获取单个榜单详情，包含该节点下的所有热点',
-    params: ['hashid=节点ID，如 weibo-hot'],
-    response: `{ success: true, data: { node: {...}, items: [...] } }`,
-  },
-  {
-    method: 'GET', path: '/api/search',
-    desc: '跨平台搜索热点内容',
-    params: ['q=关键词（必填）', 'platform=平台hashid（可选）', 'page=页码', 'limit=每页数量'],
-    response: `{ success: true, data: [...results], total }`,
-  },
-  {
-    method: 'GET', path: '/api/hot',
-    desc: '获取跨平台热点聚合，去重后的热门内容',
-    params: ['range=时间范围（day/week/month，默认day）', 'limit=数量（可选）'],
-    response: `{ success: true, data: [...items], total }`,
-  },
-  {
-    method: 'GET', path: '/api/categories',
-    desc: '获取所有分类列表',
-    response: `{ success: true, data: [{ id, name }] }`,
+    desc: '按抓取时间倒序返回所有平台的最新热点（跨平台混合列表）',
+    params: ['limit=每页数量(默认20, 最大100)', 'offset=偏移量(默认0)'],
+    response: `{ success: true, data: [{ id, title, url, hotValue, rank, createdAt, platform: { id, name, category } }], total, hasMore }`,
   },
 ]
 
@@ -100,7 +89,7 @@ export default function DocsPage() {
 
         {/* 接口列表 */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">公开接口</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">API 接口</h2>
           <div className="space-y-4">
             {ENDPOINTS.map(endpoint => (
               <div key={endpoint.path} className="bg-white rounded-xl border border-gray-200 p-5">
@@ -140,7 +129,9 @@ export default function DocsPage() {
           <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
             {[
               { code: 400, msg: '请求参数错误', color: 'text-orange-600' },
-              { code: 401, msg: 'API Key 无效', color: 'text-red-600' },
+              { code: 401, msg: 'API Key 无效或未提供', color: 'text-red-600' },
+              { code: 402, msg: '余额不足，请充值', color: 'text-red-600' },
+              { code: 404, msg: '平台不存在', color: 'text-orange-600' },
               { code: 429, msg: '请求过于频繁，请稍后再试', color: 'text-orange-600' },
               { code: 500, msg: '服务器内部错误', color: 'text-red-600' },
             ].map(e => (
