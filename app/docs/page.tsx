@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 const ENDPOINTS = [
   {
     method: 'GET', path: '/api/platforms',
-    desc: '获取所有支持的新闻平台列表',
+    desc: '获取所有支持的新闻平台列表（无需鉴权）',
     params: [],
     response: `{ success: true, data: [{ id, name, displayName, category, url, itemsCount, updatedAt }], total }`,
   },
   {
-    method: 'GET', path: '/api/platforms?platform=xxx',
+    method: 'GET', path: '/api/feeds?platform=xxx',
     desc: '根据平台 ID 获取该平台的热点列表（按排名排序）',
     params: ['platform=平台ID（必填，如 toutiao-hot）', 'limit=每页数量(默认50, 最大100)', 'offset=偏移量(默认0)'],
     response: `{ success: true, platform: { id, name, displayName, category }, data: [{ id, title, url, hotValue, rank, ... }], total, hasMore }`,
