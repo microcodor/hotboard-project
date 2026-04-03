@@ -61,9 +61,25 @@ export default function PreferencesForm() {
 
   // 复制功能 - 注意：完整 key 仅在创建时显示一次，无法找回
   const copyKey = async (key: string) => {
-    await navigator.clipboard.writeText(key)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    try {
+      // 兼容非 HTTPS 环境
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(key)
+      } else {
+        const textarea = document.createElement('textarea')
+        textarea.value = key
+        textarea.style.position = 'fixed'
+        textarea.style.opacity = '0'
+        document.body.appendChild(textarea)
+        textarea.select()
+        document.execCommand('copy')
+        document.body.removeChild(textarea)
+      }
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (e) {
+      console.error('Copy failed:', e)
+    }
   }
 
   return (
