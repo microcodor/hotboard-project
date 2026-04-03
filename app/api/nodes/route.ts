@@ -1,8 +1,8 @@
-﻿/**
+/**
  * 榜单节点 API
  * GET /api/nodes
  * 外部 API 接口，需要 API Key 鉴权
- * 内部网站访问请使用 /api/internal/nodes
+ * 按抓取时间倒序返回所有新闻
  */
 import { NextRequest, NextResponse } from 'next/server'
 import pool from '@/lib/db-pg'
@@ -30,9 +30,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ success: false, error: e.message }, { status: 401 })
     }
 
-    // 2. 限流检查
-    //    - 匿名（无 Key 无 Cookie）：IP 级别每日 100 次免费
-    // 扣余额
+    // 限流检查
     const ip = getClientIp(request)
     const rl = await checkAndDeduct(userId, ip)
     if (!rl.allowed) {
@@ -64,77 +62,49 @@ export async function GET(request: NextRequest) {
     }
 
     const { searchParams } = new URL(request.url)
-    const category = searchParams.get('cid')
-    const limit  = Math.min(parseInt(searchParams.get('limit')  || '12'), 50)
+    const limit = Math.min(parseInt(searchParams.get('limit') || '20'), 100)
     const offset = parseInt(searchParams.get('offset') || '0')
 
-    // 总数
-    let countQuery = `SELECT COUNT(*) as total FROM nodes n`
-    const countParams: any[] = []
-    if (category) { countQuery += ` WHERE n.category_name = $1`; countParams.push(category) }
-    const countResult = await pool.query(countQuery, countParams)
-    const total = parseInt(countResult.rows[0].total)
+    // 按 created_at 降序排列，直接返回新闻列表
+    const result = await pool.query(`
+      SELECT 
+        i.id,
+        i.title,
+        i.url,
+        i.hot_value as "hotValue",
+        i.hot_value::text as "hotText",
+        i.rank,
+        i.thumbnail,
+        i.description,
+        i.created_at as "createdAt",
+        json_build_object(
+          'id', n.hashid,
+          'name', n.name,
+          'displayName', COALESCE(n.display_name, n.name),
+          'category', n.category_name,
+          'url', n.url
+        ) as platform
+      FROM items i
+      JOIN nodes n ON i.node_hashid = n.hashid
+      ORDER BY i.created_at DESC
+      LIMIT $1 OFFSET $2
+    `, [limit, offset])
 
-    // 节点列表（按 display_order 排序，支持首页自定义排序）
-    const params: any[] = []
-    let nodesQuery = `
-      SELECT n.id, n.hashid, n.name, n.url, n.logo,
-             n.category_id, n.category_name, n.display_name,
-             n.created_at, n.updated_at, n.display_order,
-             (SELECT COUNT(*) FROM items WHERE node_hashid = n.hashid) as items_count,
-             (SELECT MAX(created_at) FROM items WHERE node_hashid = n.hashid) as latest_item_time
-      FROM nodes n`
-    if (category) { nodesQuery += ` WHERE n.category_name = $1`; params.push(category) }
-    nodesQuery += ` ORDER BY n.display_order ASC NULLS LAST, n.category_name, n.name LIMIT $${params.length + 1} OFFSET $${params.length + 2}`
-    params.push(limit, offset)
-
-    const nodesResult = await pool.query(nodesQuery, params)
-
-    const nodes = await Promise.all(
-      nodesResult.rows.map(async (node) => {
-        const itemsResult = await pool.query(
-          `SELECT id, title, url, hot_value, rank, thumbnail, description, created_at
-           FROM items WHERE node_hashid = $1 ORDER BY rank LIMIT 50`,
-          [node.hashid]
-        )
-        const platform = {
-          id: node.hashid, name: node.name,
-          displayName: node.display_name || node.name,
-          category: node.category_name, url: node.url, logo: node.logo || null,
-        }
-        return {
-          id: node.id.toString(), hashid: node.hashid,
-          name: node.name, displayName: node.display_name || node.name,
-          url: node.url, logo: node.logo,
-          categoryId: node.category_id, categoryName: node.category_name,
-          platform,
-          items: itemsResult.rows.map((item) => ({
-            id: item.id.toString(), title: item.title, url: item.url,
-            hotValue: item.hot_value, hotText: item.hot_value ? formatHot(item.hot_value) : '',
-            rank: item.rank, thumbnail: item.thumbnail, description: item.description,
-            created_at: item.created_at, platform,
-          })),
-          itemsCount: parseInt(node.items_count) || 0,
-          updatedAt: node.latest_item_time ? new Date(node.latest_item_time).toISOString() : (node.updated_at ? new Date(node.updated_at).toISOString() : new Date().toISOString()),
-          createdAt: node.created_at?.toISOString() || new Date().toISOString(),
-        }
-      })
-    )
+    // 获取总数
+    const countResult = await pool.query('SELECT COUNT(*) FROM items')
 
     return NextResponse.json({
-      success: true, data: nodes, total, offset, limit,
-      hasMore: offset + nodes.length < total,
+      success: true,
+      data: result.rows,
+      total: parseInt(countResult.rows[0].count),
+      limit,
+      offset,
+      hasMore: offset + result.rows.length < parseInt(countResult.rows[0].count),
       rateLimit: { limit: rl.limit, used: rl.used, remaining: currentBalance, balance: currentBalance, resetAt: rl.resetAt },
       _auth: { userId, keyName: apiKeyName },
     })
   } catch (error: any) {
     console.error('[API] /api/nodes error:', error)
-    return NextResponse.json({ success: false, error: error.message, data: [] }, { status: 500 })
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 })
   }
-}
-
-function formatHot(v: number): string {
-  if (v >= 1e8) return `${(v / 1e8).toFixed(1)}亿`
-  if (v >= 1e4) return `${(v / 1e4).toFixed(0)}万`
-  return v.toLocaleString()
 }
