@@ -1,32 +1,41 @@
 # HotBoard 热榜聚合平台
 
-全网热榜聚合平台，支持 **19 个平台**，**实时更新**，覆盖综合、视频、新闻、科技、影视、国际等分类。
+全网热榜聚合平台，支持 **19 个平台**，**实时更新**，覆盖综合、视频、新闻、科技等分类。
 
 ---
 
 ## 🚀 快速开始
 
-### 1. 启动 PostgreSQL
+### 1. 安装 PostgreSQL 并创建数据库
+
 ```bash
-docker run -d --name hotboard-postgres \
-  -e POSTGRES_USER=hotboard \
-  -e POSTGRES_PASSWORD=hotboard123 \
-  -e POSTGRES_DB=hotboard \
-  -p 5432:5432 \
-  postgres:15-alpine
+# 创建数据库和用户（替换为你自己的密码）
+psql -U postgres -c "CREATE USER hotboard WITH PASSWORD 'your_password';"
+psql -U postgres -c "CREATE DATABASE hotboard OWNER hotboard;"
 ```
 
 ### 2. 安装依赖
+
 ```bash
 npm install
 ```
 
-### 3. 初始化数据库
+### 3. 配置环境变量
+
+复制 `.env.example` 并填写配置：
+
 ```bash
-docker exec -i hotboard-postgres psql -U hotboard -d hotboard < sql/init-database.sql
+cp .env.example .env.local
 ```
 
-### 4. 启动应用
+### 4. 初始化数据库
+
+```bash
+psql -U hotboard -d hotboard < sql/init-database.sql
+```
+
+### 5. 启动应用
+
 ```bash
 npm run dev
 ```
@@ -37,7 +46,6 @@ npm run dev
 
 ## 🐳 Docker 一键部署
 
-### 启动所有服务
 ```bash
 docker compose up -d
 ```
@@ -47,162 +55,94 @@ docker compose up -d
 - `app` - Next.js 应用
 - `worker` - 定时抓取调度器
 
-### 查看服务状态
 ```bash
+# 查看服务状态
 docker compose ps
-```
 
-### 查看日志
-```bash
-# 应用日志
+# 查看日志
 docker compose logs -f app
 
-# Worker 日志
-docker compose logs -f worker
-
-# 数据库日志
-docker compose logs -f postgres
-```
-
-### 停止服务
-```bash
+# 停止服务
 docker compose down
 ```
 
 ---
 
-## ⚙️ Worker 定时抓取
-
-### 工作原理
-
-Worker 是独立的定时调度器，不依赖 QClaw 或其他外部服务。
-
-```
-Worker (每小时整点)
-    ↓
-抓取 19 个平台
-    ↓
-同步到数据库
-```
-
-### 启动方式
-
-#### 方式一：Docker 部署（推荐）
+## ⚙️ PM2 部署（推荐）
 
 ```bash
-# 启动 Worker
-docker compose up -d worker
+# 安装 PM2
+npm install -g pm2
 
-# 查看状态
-curl http://localhost:3001/status
+# 使用 ecosystem 配置启动
+pm2 start ecosystem.config.js
 
-# 查看日志
-docker compose logs -f worker
+# 开机自启
+pm2 startup
+pm2 save
 ```
-
-#### 方式二：Node.js 直接运行
-
-```bash
-cd C:\Users\Administrator\.qclaw\workspace\hotboard-project
-node scripts/worker.js
-```
-
-#### 方式三：Windows 服务（可选）
-
-使用 NSSM 将 Worker 注册为 Windows 服务：
-
-```bash
-# 安装 NSSM
-choco install nssm
-
-# 创建服务
-nssm install HotBoardWorker "node" "C:\path\to\hotboard\scripts\worker.js"
-nssm set HotBoardWorker AppDirectory "C:\path\to\hotboard"
-nssm set HotBoardWorker Start SERVICE_AUTO_START
-
-# 启动服务
-nssm start HotBoardWorker
-```
-
-### Worker API
-
-Worker 提供 HTTP API 用于管理：
-
-| 端点 | 方法 | 说明 |
-|-----|------|------|
-| `/status` | GET | 获取状态 |
-| `/trigger` | POST | 手动触发抓取 |
-| `/reload` | POST | 重新加载定时配置 |
-| `/logs` | GET | 获取最近日志 |
-
-```bash
-# 查看状态
-curl http://localhost:3001/status
-
-# 手动触发抓取
-curl -X POST http://localhost:3001/trigger
-
-# 重新加载定时配置
-curl -X POST http://localhost:3001/reload
-```
-
-### 定时配置
-
-在管理后台配置定时任务：访问 `/admin/crawl` → "定时配置"
-
-支持的 Cron 表达式：
-- `0 * * * *` - 每小时整点
-- `0 */2 * * *` - 每 2 小时
-- `0 8,12,18 * * *` - 每天 8/12/18 点
-- `0 9-22/3 * * *` - 每天 9-22 点每 3 小时
 
 ---
 
 ## 📡 支持的平台（19 个）
 
-| 分类 | 平台 | 数据量 |
-|-----|------|-------|
-| 国内综合 | 微博热搜、知乎热榜、头条热榜、百度热搜 | 各 48-50 条 |
-| 国内视频 | B站热门、抖音热点 | 各 48-50 条 |
-| 国内新闻 | 腾讯新闻、人民日报、新华社、澎湃新闻 | 各 20-30 条 |
-| 国内科技 | 掘金热榜、36氪、少数派 | 各 10-20 条 |
-| 国际社区 | GitHub Trending、Dev.to、Lobsters、HN Best | 各 24-25 条 |
-| 其他 | Hacker News、豆瓣电影 | 各 20-30 条 |
+| 分类 | 平台 |
+|-----|------|
+| 国内综合 | 微博热搜、知乎热榜、头条热榜、百度热搜 |
+| 国内视频 | B站热门、抖音热点 |
+| 国内新闻 | 腾讯新闻、人民日报、新华社、澎湃新闻 |
+| 国内科技 | 掘金热榜、36氪、少数派 |
+| 国际社区 | GitHub Trending、Hacker News、Dev.to、Lobsters |
+| 其他 | HN Best、豆瓣电影 |
+
+---
+
+## 📡 API 接口
+
+所有接口文档详见 `/docs` 页面。
+
+### 鉴权方式
+
+```bash
+# Header 方式（推荐）
+Authorization: Bearer hb_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+### 主要接口
+
+| 接口 | 鉴权 | 说明 |
+|------|------|------|
+| `GET /api/platforms` | 无需 | 获取所有平台列表 |
+| `GET /api/feeds?platform=xxx` | 需要 | 根据平台获取热点 |
+| `GET /api/nodes` | 需要 | 按时间倒序返回最新热点 |
 
 ---
 
 ## 🔐 认证系统
 
 ### 注册
+
 ```bash
 POST /api/auth/register
 Content-Type: application/json
 
 {
   "email": "user@example.com",
-  "password": "password123",
+  "password": "your_password",
   "displayName": "用户名"
 }
 ```
 
 ### 登录
+
 ```bash
 POST /api/auth/login
 Content-Type: application/json
 
 {
   "email": "user@example.com",
-  "password": "password123"
+  "password": "your_password"
 }
-```
-
-### API Key 认证
-```bash
-# Header 方式（推荐）
-curl -H "Authorization: Bearer hb_xxxxxxxx" https://api.example.com/api/nodes
-
-# Query 参数方式
-curl https://api.example.com/api/nodes?api_key=hb_xxxxxxxx
 ```
 
 ---
@@ -219,8 +159,6 @@ curl https://api.example.com/api/nodes?api_key=hb_xxxxxxxx
 | 内容管理 | 热点内容管理 |
 | 卡密管理 | 生成和管理卡密 |
 | 抓取任务 | 查看抓取历史、手动/定时抓取 |
-| API 文档 | 管理 API 文档内容 |
-| 知识库 | 平台抓取方式说明 |
 
 ---
 
@@ -231,23 +169,21 @@ hotboard-project/
 ├── app/
 │   ├── api/                    # API 路由
 │   │   ├── admin/              # 管理后台 API
-│   │   ├── auth/              # 认证 API
-│   │   ├── crawl/             # 抓取相关 API
-│   │   └── ...
-│   ├── admin/                 # 管理后台页面
-│   ├── user/                  # 用户后台页面
+│   │   ├── auth/               # 认证 API
+│   │   ├── feeds/              # 平台热点 API
+│   │   ├── nodes/              # 最新热点 API
+│   │   ├── platforms/          # 平台列表 API
+│   │   └── internal/           # 内部接口（首页用）
+│   ├── admin/                  # 管理后台页面
+│   ├── docs/                   # API 文档页面
+│   ├── user/                   # 用户后台页面
 │   └── ...
-├── components/                # React 组件
-├── lib/                       # 工具库
-├── scripts/
-│   ├── worker.js              # Worker 主程序
-│   ├── crawl-builtin.js       # 内置抓取模块
-│   └── ...
-├── sql/                       # 数据库脚本
-├── docs/                      # 文档
-├── docker-compose.yml         # Docker 编排
-├── Dockerfile                  # 应用镜像
-├── Dockerfile.worker          # Worker 镜像
+├── components/                 # React 组件
+├── lib/                        # 工具库
+├── scripts/                    # 脚本
+├── sql/                        # 数据库脚本
+├── docs/                       # 文档
+├── ecosystem.config.js         # PM2 配置
 └── package.json
 ```
 
@@ -256,17 +192,15 @@ hotboard-project/
 ## 🔧 环境变量
 
 ```env
-# 数据库
-DATABASE_URL=postgresql://hotboard:hotboard123@localhost:5432/hotboard
+# 数据库连接
+DATABASE_URL=postgresql://user:password@localhost:5432/hotboard
 
-# JWT 密钥
+# JWT 密钥（请使用随机字符串）
 JWT_SECRET=your-secret-key-here
 
-# Worker API 端口
-WORKER_PORT=3001
-
-# HotBoard API 地址（Worker 用）
-HOTBOARD_URL=http://localhost:3000
+# 内部接口 Token（首页调用内部 API 用）
+INTERNAL_TOKEN=your-internal-token
+NEXT_PUBLIC_INTERNAL_TOKEN=your-internal-token
 ```
 
 ---
@@ -280,55 +214,21 @@ HOTBOARD_URL=http://localhost:3000
 
 ---
 
-## 🐛 常见问题
-
-### Q: Worker 没有执行定时任务？
-A: 检查 Worker 进程是否运行：
-```bash
-curl http://localhost:3001/status
-```
-
-### Q: 手动触发抓取无效？
-A: 确保 Worker 正在运行，然后调用：
-```bash
-curl -X POST http://localhost:3001/trigger
-```
-
-### Q: 时间显示差 8 小时？
-A: 这是因为浏览器时区设置。请确保系统时区为北京时间。
-
-### Q: Docker 部署后 Worker 连接不上？
-A: 检查网络和端口映射：
-```bash
-docker compose ps
-curl http://localhost:3001/status
-```
-
----
-
 ## 📝 更新日志
 
+### v2.1 (2026-04-03)
+- 新增 `/api/platforms` 公开接口（无需鉴权）
+- 新增 `/api/feeds` 接口（按平台获取热点）
+- 重构 `/api/nodes` 接口（按时间倒序返回混合热点）
+- 更新 `/docs` API 文档页面
+
 ### v2.0 (2026-04-02)
-- Worker 独立调度器，完全脱离 QClaw
-- 支持多个定时配置
-- 管理后台集成抓取管理
+- 支持 PM2 部署
+- API 内外分离（内部接口 / 外部鉴权接口）
 - 19 个平台完整支持
+- 用户余额与 API Key 管理
 
 ### v1.0 (2026-03-31)
 - 基础功能上线
 - 用户注册/登录
 - 热点聚合展示
-
----
-
-## 📞 信息
-
-- **项目路径**: `C:\Users\Administrator\.qclaw\workspace\hotboard-project\`
-- **数据库**: Docker 容器 `hotboard-postgres`
-- **开发服务器**: http://localhost:3000
-- **Worker API**: http://localhost:3001
-- **管理员账号**: `admin@hotboard.com` / `admin123456`
-
----
-
-**最后更新**: 2026-04-02 09:22 GMT+8
